@@ -1,0 +1,97 @@
+<div class="register-page">
+    <form class="register-form">
+        <h1 class="logo"> logo </h1>
+        <h1 class="title-register"> {{ title }}</h1>
+
+        <div class="user-type">
+            <div>
+                <label for="patientUser">Patient</label>
+                <input id="patientUser" type="checkbox" name="patientUser">
+            </div>
+            <div>
+                <label for="clinicUser">Clinic</label>
+                <input id="clinicUser" type="checkbox" name="clinicUser">
+            </div>
+        </div>
+
+        <div class="user-name-cnp">
+            <div>
+                <label for="firstName">First Name</label>
+                <input id="firstName" type="text" name="firstName" placeholder="First Name">
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input id="lastName" type="text" name="lastName" placeholder="Last Name">
+            </div>
+            <div>
+                <label for="cnp">CNP:</label>
+                <input id="cnp" type="text" name="cnp" placeholder="CNP">
+            </div>
+        </div>
+
+        <div class="birthday">
+            <div>
+                <label for="birthday">Birthday</label>
+                <input id="birthday" type="date" name="birthday">
+            </div>
+
+            <div class="user-type">
+                <div>
+                    <label for="male">Male</label>
+                    <input id="male" type="checkbox" name="male">
+                </div>
+
+                <div>
+                    <label for="female">Female</label>
+                    <input id="female" type="checkbox" name="female">
+                </div>
+            </div>
+        </div>
+
+        <fieldset>
+            <legend>Address:</legend>
+
+            <div class="address">
+                <div style="width: 60%">
+                    <label for="streetAddress">Street Address</label>
+                    <input id="streetAddress" type="text" name="streetAddress" placeholder="Street Address">
+                </div>
+
+                <div>
+                    <label for="numberAddress">Number</label>
+                    <input id="numberAddress" type="text" name="numberAddress" placeholder="Number">
+                </div>
+            </div>
+
+            <div class="address">
+                <div style="width: 60%">
+                    <label for="city">City</label>
+                    <input id="city" type="text" name="city" placeholder="City">
+                </div>
+
+                <div>
+                    <label for="postalCode">Postal Code</label>
+                    <input id="postalCode" type="text" name="postalCode" placeholder="Postal Code">
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="credentials">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="birthday" placeholder="Phone">
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Email">
+
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Password">
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password">
+        </div>
+
+        <input class="submit" type="submit" value="Register">
+    </form>
+</div>
+
+
