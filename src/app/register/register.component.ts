@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {PatientService} from '../services/patient.service';
 import {ClinicService} from '../services/clinic.service';
 import {PatientModel} from '../models/patient.model';
 import {ClinicModel} from '../models/clinic.model';
 import {Router} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +14,10 @@ import {Router} from '@angular/router';
 })
 
 export class RegisterComponent implements OnInit {
+    model = {
+        password: null,
+        confirmPassword: null
+    };
 
   public title: string = "Online Registration";
 

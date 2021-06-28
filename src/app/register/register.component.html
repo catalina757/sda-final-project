@@ -17,40 +17,81 @@
         <div class="user-name-code" *ngIf="userType === 'patient'">
             <div>
                 <label for="firstName">First Name</label>
-                <input id="firstName" type="text" name="firstName" placeholder="First Name" ngModel required #firstName="ngModel">
+                <input id="firstName" type="text" name="firstName" placeholder="First Name" ngModel required minlength="3" #firstName="ngModel">
             </div>
-            <span *ngIf="!firstName.valid && firstName.touched">Please enter a valid first name</span>
+            <div *ngIf="!firstName.valid && firstName.touched">
+                <div *ngIf="firstName.errors?.required">
+                    First name is required.
+                </div>
+                <div *ngIf="firstName.errors?.minlength">
+                    First name must be at least 3 characters long.
+                </div>
+            </div>
 
             <div>
                 <label for="lastName">Last Name</label>
-                <input id="lastName" type="text" name="lastName" placeholder="Last Name" ngModel required #lastName="ngModel">
+                <input id="lastName" type="text" name="lastName" placeholder="Last Name" ngModel required minlength="3" #lastName="ngModel">
             </div>
-            <span *ngIf="!lastName.valid && lastName.touched">Please enter a valid last name</span>
+            <div *ngIf="!lastName.valid && lastName.touched">
+                <div *ngIf="lastName.errors?.required">
+                    Last name is required.
+                </div>
+                <div *ngIf="lastName.errors?.minlength">
+                    Last name must be at least 3 characters long.
+                </div>
+            </div>
 
             <div>
                 <label for="cnp">CNP:</label>
-                <input id="cnp" type="text" name="cnp" placeholder="CNP" ngModel required #cnp="ngModel">
+                <input id="cnp" type="number" name="cnp" placeholder="CNP" ngModel required minlength="13" pattern="[1-8][0-9]{2}[0,1][0-9][0-9]{2}[0-9]{6}" #cnp="ngModel">
             </div>
-            <span *ngIf="!cnp.valid && cnp.touched">Please enter a valid cnp</span>
+            <div *ngIf="!cnp.valid && cnp.touched">
+                <div *ngIf="cnp.errors?.required">
+                    CNP is required.
+                </div>
+                <div *ngIf="cnp.errors?.pattern">
+                    CNP must be 13 characters long (just numbers).
+                </div>
+            </div>
         </div>
 
         <div class="user-name-code" *ngIf="userType === 'clinic'">
             <div>
                 <label for="clinicName">Name</label>
-                <input id="clinicName" type="text" name="clinicName" placeholder="Name" ngModel required #clinicName="ngModel">
+                <input id="clinicName" type="text" name="clinicName" placeholder="Name" ngModel required minlength="3" #clinicName="ngModel">
             </div>
-            <span *ngIf="!clinicName.valid && clinicName.touched">Please enter a valid clinic name</span>
+            <div *ngIf="!clinicName.valid && clinicName.touched">
+                <div *ngIf="clinicName.errors?.required">
+                    Clinic name is required.
+                </div>
+                <div *ngIf="clinicName.errors?.minlength">
+                    Clinic name must be at least 3 characters long.
+                </div>
+            </div>
+
             <div>
                 <label for=codeAuthorization>Authorization Code</label>
-                <input id="codeAuthorization" type="text" name="codeAuthorization" placeholder="Authorization Code" ngModel required #codeAuthorization="ngModel">
+                <input id="codeAuthorization" type="number" name="codeAuthorization" placeholder="Authorization Code" ngModel required pattern="[0-9]{6}" #codeAuthorization="ngModel">
             </div>
-            <span *ngIf="!codeAuthorization.valid && codeAuthorization.touched">Please enter a valid code authorization</span>
+            <div *ngIf="!codeAuthorization.valid && codeAuthorization.touched">
+                <div *ngIf="codeAuthorization.errors?.required">
+                    Authorization code is required.
+                </div>
+                <div *ngIf="codeAuthorization.errors?.pattern">
+                    Authorization code must be 6 characters long (just numbers).
+                </div>
+            </div>
         </div>
 
         <div class="birthday" *ngIf="userType === 'patient'">
             <div>
-                <label for="birthday">Birthday</label>
+                <label for="birthday">Date of birth</label>
                 <input id="birthday" type="date" name="birthday" ngModel required #birthday="ngModel">
+                <div *ngIf="!birthday.valid && birthday.touched">
+                    <div class="birthday-error" *ngIf="birthday.errors?.required">
+                        Date of birth is required.
+                    </div>
+                </div>
             </div>
 
             <div class="user-type">
@@ -70,50 +111,103 @@
             <legend>Address:</legend>
 
             <div class="address">
-                <div style="width: 60%">
+                <div>
                     <label for="streetAddress">Street Address</label>
-                    <input id="streetAddress" type="text" name="streetAddress" placeholder="Street Address" ngModel required #streetAddress="ngModel">
+                    <input id="streetAddress" type="text" name="streetAddress" placeholder="Street Address" ngModel required minlength="3" #streetAddress="ngModel">
+                    <div *ngIf="!streetAddress.valid && streetAddress.touched">
+                        <div *ngIf="streetAddress.errors?.required">
+                            Street address is required.
+                        </div>
+                        <div *ngIf="streetAddress.errors?.minlength">
+                            Street address must be at least 3 characters long.
+                        </div>
+                    </div>
                 </div>
-                <div *ngIf="!streetAddress.valid && streetAddress.touched">Please enter a valid street address</div>
 
                 <div>
                     <label for="numberAddress">Number</label>
                     <input id="numberAddress" type="text" name="numberAddress" placeholder="Number" ngModel required #numberAddress="ngModel">
+                    <div *ngIf="!numberAddress.valid && numberAddress.touched">
+                        <div *ngIf="numberAddress.errors?.required">
+                            Number address is required.
+                        </div>
+                    </div>
                 </div>
-                <span *ngIf="!numberAddress.valid && numberAddress.touched">Please enter a valid number address</span>
             </div>
 
             <div class="address">
                 <div>
                     <label for="city">City</label>
-                    <input id="city" type="text" name="city" placeholder="City" ngModel required #city="ngModel">
+                    <input id="city" type="text" name="city" placeholder="City" ngModel required minlength="3" #city="ngModel">
+                    <div *ngIf="!city.valid && city.touched">
+                        <div *ngIf="city.errors?.required">
+                            City is required.
+                        </div>
+                        <div *ngIf="city.errors?.minlength">
+                            City must be at least 3 characters long.
+                        </div>
+                    </div>
                 </div>
-                <span *ngIf="!city.valid && city.touched">Please enter a valid city</span>
 
                 <div>
                     <label for="postalCode">Postal Code</label>
-                    <input id="postalCode" type="text" name="postalCode" placeholder="Postal Code" ngModel required #postalCode="ngModel">
+                    <input id="postalCode" type="number" name="postalCode" placeholder="Postal Code" ngModel required pattern="[0-9]{6}" #postalCode="ngModel">
+                    <div *ngIf="!postalCode.valid && postalCode.touched">
+                        <div *ngIf="postalCode.errors?.required">
+                            Postal code is required.
+                        </div>
+                        <div *ngIf="postalCode.errors?.pattern">
+                            Postal code must be 6 characters long.
+                        </div>
+                    </div>
                 </div>
-                <span *ngIf="!postalCode.valid && postalCode.touched">Please enter a valid postal code</span>
             </div>
         </fieldset>
 
         <div class="credentials">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" name="phone" placeholder="Phone" ngModel required #phone="ngModel">
-            <span *ngIf="!phone.valid && phone.touched">Please enter a valid phone</span>
+            <input id="phone" type="number" name="phone" placeholder="Phone" ngModel required pattern="[07]\d{8}" #phone="ngModel">
+            <div *ngIf="!phone.valid && phone.touched">
+                <div *ngIf="phone.errors?.required">
+                    Phone is required.
+                </div>
+                <div *ngIf="phone.errors?.pattern">
+                    Phone must be 10 characters long.
+                </div>
+            </div>
 
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="Email" ngModel required #email="ngModel">
-            <span *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+            <input id="email" type="text" name="email" placeholder="Email" ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel">
+            <div *ngIf="!email.valid && email.touched">
+                <div *ngIf="email.errors?.required">
+                    Email is required.
+                </div>
+                <div *ngIf="email.errors?.pattern">
+                    Email must be of type example@site.com.
+                </div>
+            </div>
 
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" placeholder="Password" ngModel required #password="ngModel">
-            <span *ngIf="!password.valid && password.touched">Please enter a valid password</span>
+            <input id="password" type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required minlength="6" #password="ngModel">
+            <div *ngIf="!password.valid && password.touched">
+                <div *ngIf="password.errors?.required">
+                    Password is required.
+                </div>
+                <div *ngIf="password.errors?.minlength">
+                    Password must be at least 6 characters long.
+                </div>
+            </div>
 
             <label for="confirmPassword">Confirm Password</label>
-            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" ngModel required #confirmPassword="ngModel">
-            <span *ngIf="!confirmPassword.valid && confirmPassword.touched">Please enter a valid password</span>
+            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="model.confirmPassword" required ngValidateEqual = "password" #confirmPassword="ngModel">
+            <div *ngIf="!confirmPassword.valid && confirmPassword.touched">
+                <div *ngIf="confirmPassword.errors?.required">
+                    Confirm password is required.
+                </div>
+                <div *ngIf="confirmPassword.hasError('notEqual')&&password.valid">
+                    Passwords must match.
+                </div>
+            </div>
         </div>
 
         <input class="submit" type="submit" value="Register" [disabled]="!registeredForm.valid">

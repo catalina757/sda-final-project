@@ -1,9 +1,9 @@
 .register-page {
     min-height: 100vh;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 3rem 0 3rem 0;
 }
 
 .logo {
@@ -13,6 +13,7 @@
 .title-register {
     background-color: #EBFAF2;
     padding: 20px;
+    text-align: center;
 }
 
 label {
@@ -24,7 +25,12 @@ input {
     margin: 3px 0 5px 0;
 }
 
-input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="password"] {
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
     background-color: #EBFAF2;
     border: none;
     width: 96%;
@@ -35,6 +41,17 @@ input[type="text"], input[type="date"], input[type="tel"], input[type="email"], 
     outline: none;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .register-form {
     display: flex;
     flex-direction: column;
@@ -42,6 +59,7 @@ input[type="text"], input[type="date"], input[type="tel"], input[type="email"], 
     border-radius: 4px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
     width: 75vw;
+    max-width: 800px;
 }
 
 .user-type {
@@ -77,6 +95,14 @@ fieldset, legend {
     margin: 0 0 10px 0;
 }
 
+.address>div:first-child {
+    width: 70%;
+}
+
+.address>div:last-child {
+    width: 28%;
+}
+
 .submit {
     margin: 20px;
     padding: 10px 24px  ;
@@ -89,6 +115,31 @@ fieldset, legend {
 
 input.ng-invalid.ng-touched {
     border: 1px solid red;
+}
+
+@media only screen and (max-width: 800px) {
+    .address {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .address>div:first-child, .address>div:last-child {
+        width: 100%;
+    }
+
+    .birthday {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .birthday-error{
+        text-align: center;
+        padding-left: 10px;
+    }
+
+    label[for="birthday"] {
+        text-align: center;
+    }
 }
 
 
