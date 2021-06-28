@@ -8,12 +8,14 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ValidateEqualModule} from 'ng-validate-equal';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

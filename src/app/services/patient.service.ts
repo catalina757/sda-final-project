@@ -7,7 +7,7 @@ import {PatientModel} from '../models/patient.model';
   providedIn: 'root'
 })
 export class PatientService {
-  private patientUrl = 'http://localhost:3000/patients';
+  public patientUrl = 'http://localhost:3000/patients';
 
   public allPatients: PatientModel[] = [];
 

@@ -1,12 +1,12 @@
 .login-page {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem 0 3rem 0;
 }
 
 .logo {
+    margin: 3rem 0 2rem 0;
     color: #21B573;
 }
 
@@ -47,17 +47,38 @@ input[type="password"] {
     max-width: 800px;
 }
 
+.user-type {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 10px;
+    width: 90%;
+}
+
 .credentials {
     width: 90%;
     margin: 1rem 0 1rem 0;
 }
 
 .submit {
-    margin: 20px;
-    padding: 10px 24px  ;
+    margin: 2rem 0 2rem 0;
+    padding: 10px 24px;
     text-align: center;
     background-color: #21B573;
     border: none;
     border-radius: 4px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+.notMember, .forgot-password {
+    margin: 1rem 0 3rem 0;
+}
+
+.not-a-member>a, .forgot-password>a {
+    text-decoration: none;
+    color: #21B573;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
 }

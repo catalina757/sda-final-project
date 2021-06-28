@@ -4,6 +4,7 @@ import {PatientModel} from '../models/patient.model';
 import {PatientService} from '../services/patient.service';
 import {ClinicService} from '../services/clinic.service';
 import {ClinicModel} from '../models/clinic.model';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
     public userType: string = "patient";
 
     constructor(private patientService: PatientService,
-                private clinicService: ClinicService) {
+                private clinicService: ClinicService,
+                private router: Router) {
     }
 
     ngOnInit(): void {
@@ -51,6 +53,7 @@ export class LoginComponent implements OnInit {
                 existEmail = true;
                 existPassword = true;
                 console.log('patient dashboard');
+                this.router.navigate(['dashboard']);
               }
             }
 
@@ -72,6 +75,7 @@ export class LoginComponent implements OnInit {
                 existEmail = true;
                 existPassword = true;
                 console.log('clinic dashboard');
+                this.router.navigate(['dashboard']);
               }
             }
 
