@@ -7,12 +7,14 @@ import {ClinicModel} from '../models/clinic.model';
   providedIn: 'root'
 })
 export class ClinicService {
+  public allClinics: ClinicModel[] = [];
 
   private clinicUrl = 'http://localhost:3000/clinics';
 
   constructor(private http: HttpClient) { }
 
-  public getClinics():Observable<ClinicModel[]> {
+  public getClinicsServ():Observable<ClinicModel[]> {
     return this.http.get<ClinicModel[]>(`${this.clinicUrl}`);
   }
 }
+

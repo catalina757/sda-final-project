@@ -9,10 +9,11 @@ import {PatientModel} from '../models/patient.model';
 export class PatientService {
   private patientUrl = 'http://localhost:3000/patients';
 
+  public allPatients: PatientModel[] = [];
+
   constructor(private http: HttpClient) { }
 
-  public getPatients():Observable<PatientModel[]> {
+  public getPatientsServ():Observable<PatientModel[]> {
     return this.http.get<PatientModel[]>(`${this.patientUrl}`);
   }
-
 }

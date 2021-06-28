@@ -1,0 +1,27 @@
+<div class="login-page">
+    <form class="login-form" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+        <h1 class="logo"> logo </h1>
+        <h1 class="title-login"> {{ title }}</h1>
+
+        <div class="user-type">
+            <div>
+                <label for="patientUser">Patient</label>
+                <input id="patientUser" type="radio" name="userType" value="patient" [(ngModel)]="userType">
+            </div>
+            <div>
+                <label for="clinicUser">Clinic</label>
+                <input id="clinicUser" type="radio" name="userType" value="clinic" [(ngModel)]="userType">
+            </div>
+        </div>
+
+        <div class="credentials">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Email" ngModel #email="ngModel">
+
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Password" ngModel #password="ngModel">
+        </div>
+
+        <input class="submit" type="submit" value="Register" [disabled]="!loginForm.valid">
+    </form>
+</div>
