@@ -1,4 +1,4 @@
-export class Patient {
+export class PatientModel {
     id!: number;
     userType!: string;
     firstName!: string;

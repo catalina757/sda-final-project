@@ -1,49 +1,67 @@
 <div class="register-page">
-    <form class="register-form">
+    <form class="register-form" (ngSubmit)="onSubmit(registeredForm)" #registeredForm="ngForm">
         <h1 class="logo"> logo </h1>
         <h1 class="title-register"> {{ title }}</h1>
 
         <div class="user-type">
             <div>
                 <label for="patientUser">Patient</label>
-                <input id="patientUser" type="checkbox" name="patientUser">
+                <input id="patientUser" type="radio" name="userType" [(ngModel)]="userType" value="patient">
             </div>
             <div>
                 <label for="clinicUser">Clinic</label>
-                <input id="clinicUser" type="checkbox" name="clinicUser">
+                <input id="clinicUser" type="radio" name="userType" [(ngModel)]="userType" value="clinic">
             </div>
         </div>
 
-        <div class="user-name-cnp">
+        <div class="user-name-code" *ngIf="userType === 'patient'">
             <div>
                 <label for="firstName">First Name</label>
-                <input id="firstName" type="text" name="firstName" placeholder="First Name">
+                <input id="firstName" type="text" name="firstName" placeholder="First Name" ngModel required #firstName="ngModel">
             </div>
+            <span *ngIf="!firstName.valid && firstName.touched">Please enter a valid first name</span>
+
             <div>
                 <label for="lastName">Last Name</label>
-                <input id="lastName" type="text" name="lastName" placeholder="Last Name">
+                <input id="lastName" type="text" name="lastName" placeholder="Last Name" ngModel required #lastName="ngModel">
             </div>
+            <span *ngIf="!lastName.valid && lastName.touched">Please enter a valid last name</span>
+
             <div>
                 <label for="cnp">CNP:</label>
-                <input id="cnp" type="text" name="cnp" placeholder="CNP">
+                <input id="cnp" type="text" name="cnp" placeholder="CNP" ngModel required #cnp="ngModel">
             </div>
+            <span *ngIf="!cnp.valid && cnp.touched">Please enter a valid cnp</span>
         </div>
 
-        <div class="birthday">
+        <div class="user-name-code" *ngIf="userType === 'clinic'">
+            <div>
+                <label for="clinicName">Name</label>
+                <input id="clinicName" type="text" name="clinicName" placeholder="Name" ngModel required #clinicName="ngModel">
+            </div>
+            <span *ngIf="!clinicName.valid && clinicName.touched">Please enter a valid clinic name</span>
+            <div>
+                <label for=codeAuthorization>Authorization Code</label>
+                <input id="codeAuthorization" type="text" name="codeAuthorization" placeholder="Authorization Code" ngModel required #codeAuthorization="ngModel">
+            </div>
+            <span *ngIf="!codeAuthorization.valid && codeAuthorization.touched">Please enter a valid code authorization</span>
+        </div>
+
+        <div class="birthday" *ngIf="userType === 'patient'">
             <div>
                 <label for="birthday">Birthday</label>
-                <input id="birthday" type="date" name="birthday">
+                <input id="birthday" type="date" name="birthday" ngModel required #birthday="ngModel">
             </div>
 
             <div class="user-type">
                 <div>
                     <label for="male">Male</label>
-                    <input id="male" type="checkbox" name="male">
+                    <input id="male" type="radio" name="gender" value="male" [(ngModel)]="gender">
                 </div>
 
                 <div>
                     <label for="female">Female</label>
-                    <input id="female" type="checkbox" name="female">
+                    <input id="female" type="radio" name="gender" value="female" [(ngModel)]="gender">
                 </div>
             </div>
         </div>
@@ -54,43 +72,53 @@
             <div class="address">
                 <div style="width: 60%">
                     <label for="streetAddress">Street Address</label>
-                    <input id="streetAddress" type="text" name="streetAddress" placeholder="Street Address">
+                    <input id="streetAddress" type="text" name="streetAddress" placeholder="Street Address" ngModel required #streetAddress="ngModel">
                 </div>
+                <div *ngIf="!streetAddress.valid && streetAddress.touched">Please enter a valid street address</div>
 
                 <div>
                     <label for="numberAddress">Number</label>
-                    <input id="numberAddress" type="text" name="numberAddress" placeholder="Number">
+                    <input id="numberAddress" type="text" name="numberAddress" placeholder="Number" ngModel required #numberAddress="ngModel">
                 </div>
+                <span *ngIf="!numberAddress.valid && numberAddress.touched">Please enter a valid number address</span>
             </div>
 
             <div class="address">
-                <div style="width: 60%">
+                <div>
                     <label for="city">City</label>
-                    <input id="city" type="text" name="city" placeholder="City">
+                    <input id="city" type="text" name="city" placeholder="City" ngModel required #city="ngModel">
                 </div>
+                <span *ngIf="!city.valid && city.touched">Please enter a valid city</span>
 
                 <div>
                     <label for="postalCode">Postal Code</label>
-                    <input id="postalCode" type="text" name="postalCode" placeholder="Postal Code">
+                    <input id="postalCode" type="text" name="postalCode" placeholder="Postal Code" ngModel required #postalCode="ngModel">
                 </div>
+                <span *ngIf="!postalCode.valid && postalCode.touched">Please enter a valid postal code</span>
             </div>
         </fieldset>
 
         <div class="credentials">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" name="birthday" placeholder="Phone">
+            <input id="phone" type="tel" name="phone" placeholder="Phone" ngModel required #phone="ngModel">
+            <span *ngIf="!phone.valid && phone.touched">Please enter a valid phone</span>
 
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="Email">
+            <input id="email" type="email" name="email" placeholder="Email" ngModel required #email="ngModel">
+            <span *ngIf="!email.valid && email.touched">Please enter a valid email</span>
 
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" placeholder="Password">
+            <input id="password" type="password" name="password" placeholder="Password" ngModel required #password="ngModel">
+            <span *ngIf="!password.valid && password.touched">Please enter a valid password</span>
 
             <label for="confirmPassword">Confirm Password</label>
-            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password">
+            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" ngModel required #confirmPassword="ngModel">
+            <span *ngIf="!confirmPassword.valid && confirmPassword.touched">Please enter a valid password</span>
         </div>
 
-        <input class="submit" type="submit" value="Register">
+        <input class="submit" type="submit" value="Register" [disabled]="!registeredForm.valid">
+
+        <div *ngIf="registeredForm.submitted" style="font-size: 2rem; margin: 2rem; position: center">Form submitted!</div>
     </form>
 </div>
 
