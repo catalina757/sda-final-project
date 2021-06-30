@@ -1,4 +1,7 @@
-<button (click)="loginService.logout()">Logout</button>
+<div>
+    <button (click)="loginService.logout()">Logout</button>
+</div>
+
 <div class="dashboard-page">
     <div *ngIf="loginService.userLogged.userType === 'patient'">
         <app-patient-dashboard></app-patient-dashboard>

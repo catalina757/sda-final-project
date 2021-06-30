@@ -8,7 +8,7 @@ export class UserLogged {
     birthday?: string = "";
     gender?: string = "";
 
-    name?: string = "";
+    clinicName?: string = "";
     authorizationCode?: string = "";
 
     streetAddress: string = "";

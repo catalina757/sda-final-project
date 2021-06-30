@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PatientDashboardComponent } from './dashboard/patient-dashboard/patient-dashboard.component';
 import { ClinicDashboardComponent } from './dashboard/clinic-dashboard/clinic-dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ClinicDashboardComponent } from './dashboard/clinic-dashboard/clinic-da
     DashboardComponent,
     PatientDashboardComponent,
     ClinicDashboardComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

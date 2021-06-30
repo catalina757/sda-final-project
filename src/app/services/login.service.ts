@@ -13,10 +13,7 @@ export class LoginService {
   logout() {
     if(this.userLogged) {
       this.router.navigate(['login'])
-          .then(()=> {
-            this.userLogged = new UserLogged();
-            console.log(this.userLogged );
-          })
+          .then(()=> this.userLogged = new UserLogged())
     }
   }
 }

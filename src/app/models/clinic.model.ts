@@ -1,7 +1,7 @@
 export class ClinicModel {
     id?: number;
     userType: string = "";
-    name: string = "";
+    clinicName: string = "";
     authorizationCode: string = "";
     streetAddress: string = "";
     numberAddress: string = "";

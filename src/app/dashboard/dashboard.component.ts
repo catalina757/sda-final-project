@@ -8,10 +8,10 @@ import {LoginService} from '../services/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService) {
+  }
 
   ngOnInit(): void {
-    console.log("dashboard here", this.loginService.userLogged.userType);
   }
 
 }
