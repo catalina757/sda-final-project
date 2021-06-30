@@ -19,4 +19,7 @@ export class UserLogged {
     email: string = "";
     password: string = "";
     confirmPassword: string = "";
+
+    specialities?: {id:number, name: string}[] = [];
 }
+

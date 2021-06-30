@@ -13,6 +13,7 @@ import {LoginService} from '../services/login.service';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
     public title: string = "Login Form";
     public userType: string = "patient";
 
@@ -78,7 +79,9 @@ export class LoginComponent implements OnInit {
                 }
             });
         }
+        this.loginService.saveUserLogged();
     }
 }
 
 // https://angular.io/guide/form-validation
+// https://www.npmjs.com/package/ngx-webstorage

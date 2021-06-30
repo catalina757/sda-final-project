@@ -116,7 +116,17 @@
       "confirmPassword": "123456",
       "clinicName": "clinica1",
       "codeAuthorization": 345678,
-      "id": 1
+      "id": 1,
+      "specialities": [
+        {
+          "id": 1,
+          "name": "Allergology"
+        },
+        {
+          "id": 2,
+          "name": "Cardiology"
+        }
+      ]
     },
     {
       "userType": "clinic",

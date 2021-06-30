@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PatientDashboardComponent } from './dashboard/patient-dashboard/patient-dashboard.component';
 import { ClinicDashboardComponent } from './dashboard/clinic-dashboard/clinic-dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { MedicalSpecialitiesComponent } from './medical-specialities/medical-specialities.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     PatientDashboardComponent,
     ClinicDashboardComponent,
     HomeComponent,
+    MedicalSpecialitiesComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,8 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     //  for password and confirmPassword:
     ValidateEqualModule!,
+    // for localStorage:
+    NgxWebstorageModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
