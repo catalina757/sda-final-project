@@ -26,7 +26,8 @@ import { ClinicDashboardComponent } from './dashboard/clinic-dashboard/clinic-da
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ValidateEqualModule,
+    //  for password and confirmPassword:
+    ValidateEqualModule!,
   ],
   providers: [],
   bootstrap: [AppComponent]

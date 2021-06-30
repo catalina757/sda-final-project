@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PatientService} from '../services/patient.service';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,11 +7,11 @@ import {PatientService} from '../services/patient.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  // public userType: string = "clinic";
 
-  constructor(private patientService: PatientService) { }
+  constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
+    console.log("dashboard here", this.loginService.userLogged.userType);
   }
 
 }

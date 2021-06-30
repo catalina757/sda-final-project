@@ -84,6 +84,23 @@
       "birthday": "0004-03-12",
       "gender": "female",
       "id": 5
+    },
+    {
+      "userType": "patient",
+      "streetAddress": "street, 1",
+      "numberAddress": "1",
+      "city": "city",
+      "postalCode": 0,
+      "phone": 723456789,
+      "email": "vasile@email.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "Vasile",
+      "lastName": "George",
+      "cnp": 1871223234567,
+      "birthday": "1987-12-23",
+      "gender": "male",
+      "id": 6
     }
   ],
   "clinics": [
@@ -114,6 +131,48 @@
       "clinicName": "clinica2",
       "codeAuthorization": 345675,
       "id": 2
+    },
+    {
+      "userType": "clinic",
+      "streetAddress": "stree",
+      "numberAddress": "1",
+      "city": "city",
+      "postalCode": 123456,
+      "phone": 723123456,
+      "email": "sanador@email.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "clinicName": "Sanador",
+      "codeAuthorization": 123456,
+      "id": 3
+    },
+    {
+      "userType": "clinic",
+      "streetAddress": "street",
+      "numberAddress": "1",
+      "city": "city",
+      "postalCode": 0,
+      "phone": 723456789,
+      "email": "maria@email.com",
+      "password": "123456",
+      "confirmPassword": "123457",
+      "clinicName": "Regina Maria",
+      "codeAuthorization": 123456,
+      "id": 4
+    },
+    {
+      "userType": "clinic",
+      "streetAddress": "street, 1",
+      "numberAddress": "1",
+      "city": "city",
+      "postalCode": 0,
+      "phone": 723456789,
+      "email": "dr@email.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "clinicName": "Doctorul",
+      "codeAuthorization": 123456,
+      "id": 5
     }
   ]
 }

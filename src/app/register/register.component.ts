@@ -60,6 +60,7 @@ export class RegisterComponent implements OnInit {
     onSubmit(form: NgForm) {
         if (form.controls.userType.value === 'patient') {
             let existEmail = false;
+
             for (let i = 0; i < this.allPatients.length; i++) {
                 if (form.controls.email.value === this.allPatients[i].email) {
                     existEmail = true;
@@ -71,11 +72,12 @@ export class RegisterComponent implements OnInit {
                     this.allPatients.push(newPatient);
                 });
                 this.router.navigate(['login']);
+
             } else {
                 alert("This email already exists!!!");
             }
 
-        } else {
+        } else if(form.controls.userType.value === 'clinic') {
             let existEmail = false;
             for (let i = 0; i < this.allClinics.length; i++) {
                 if (form.controls.email.value === this.allClinics[i].email) {
@@ -88,11 +90,11 @@ export class RegisterComponent implements OnInit {
                     this.allClinics.push(newClinic);
                 });
                 this.router.navigate(['login']);
+
             } else {
                 alert("this email already exists!!!");
             }
         }
-
     }
 
     passwordModel = {

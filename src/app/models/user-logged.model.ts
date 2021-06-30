@@ -1,8 +1,16 @@
-export class ClinicModel {
+export class UserLogged {
     id?: number;
     userType: string = "";
-    name: string = "";
-    authorizationCode: string = "";
+
+    firstName?: string = "";
+    lastName?: string = "";
+    cnp?: string = "";
+    birthday?: string = "";
+    gender?: string = "";
+
+    name?: string = "";
+    authorizationCode?: string = "";
+
     streetAddress: string = "";
     numberAddress: string = "";
     city: string = "";
