@@ -11,9 +11,15 @@ export class PatientService {
 
   public allPatients: PatientModel[] = [];
 
+  public patient!: PatientModel;
+
   constructor(private http: HttpClient) { }
 
   public getPatientsServ():Observable<PatientModel[]> {
     return this.http.get<PatientModel[]>(`${this.patientUrl}`);
+  }
+
+  public createPatientServ(patient:PatientModel): Observable<PatientModel> {
+    return this.http.post<PatientModel>(`${this.patientUrl}`, patient);
   }
 }

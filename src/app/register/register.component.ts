@@ -22,10 +22,11 @@ export class RegisterComponent implements OnInit {
     constructor(private http: HttpClient,
                 private patientService: PatientService,
                 private clinicService: ClinicService,
-                private router: Router) {
-    }
+                private router: Router) {}
 
     ngOnInit(): void {
+        this.readPatientsList();
+        this.readClinicsList();
     }
 
     get allPatients(): PatientModel[] {
@@ -44,52 +45,54 @@ export class RegisterComponent implements OnInit {
         this.clinicService.allClinics = value;
     }
 
-    onCreatePatient(patient: PatientModel) {
-        this.http.post('http://localhost:3000/patients', patient).subscribe();
+    readPatientsList() {
+        this.patientService.getPatientsServ().subscribe((patientsList: PatientModel[]) => {
+            this.allPatients = patientsList;
+        });
     }
 
-    onCreateClinic(clinic: ClinicModel) {
-        this.http.post('http://localhost:3000/clinics', clinic).subscribe();
+    readClinicsList() {
+        this.clinicService.getClinicsServ().subscribe((clinicsList: ClinicModel[]) => {
+            this.allClinics = clinicsList;
+        })
     }
 
     onSubmit(form: NgForm) {
         if (form.controls.userType.value === 'patient') {
-            this.patientService.getPatientsServ().subscribe((patientsList: PatientModel[]) => {
-                this.allPatients = patientsList;
-
-                let existEmail = false;
-                for (let i = 0; i < this.allPatients.length; i++) {
-                    if (form.controls.email.value === this.allPatients[i].email) {
-                        existEmail = true;
-                    }
+            let existEmail = false;
+            for (let i = 0; i < this.allPatients.length; i++) {
+                if (form.controls.email.value === this.allPatients[i].email) {
+                    existEmail = true;
                 }
+            }
 
-                if (!existEmail) {
-                    this.onCreatePatient(form.value);
-                    this.router.navigate(['login']);
-                } else {
-                    alert("This email already exists!!!");
-                }
-            });
+            if (!existEmail) {
+                this.patientService.createPatientServ(form.value).subscribe((newPatient: PatientModel) => {
+                    this.allPatients.push(newPatient);
+                });
+                this.router.navigate(['login']);
+            } else {
+                alert("This email already exists!!!");
+            }
+
         } else {
-            this.clinicService.getClinicsServ().subscribe((clinicsList: ClinicModel[]) => {
-                this.allClinics = clinicsList;
-
-                let existEmail = false;
-                for (let i = 0; i < this.allClinics.length; i++) {
-                    if (form.controls.email.value === this.allClinics[i].email) {
-                        existEmail = true;
-                    }
+            let existEmail = false;
+            for (let i = 0; i < this.allClinics.length; i++) {
+                if (form.controls.email.value === this.allClinics[i].email) {
+                    existEmail = true;
                 }
+            }
 
-                if (!existEmail) {
-                    this.onCreateClinic(form.value);
-                    this.router.navigate(['login']);
-                } else {
-                    alert("this email already exists!!!");
-                }
-            });
+            if (!existEmail) {
+                this.clinicService.createClinicServ(form.value).subscribe((newClinic: ClinicModel) => {
+                    this.allClinics.push(newClinic);
+                });
+                this.router.navigate(['login']);
+            } else {
+                alert("this email already exists!!!");
+            }
         }
+
     }
 
     passwordModel = {

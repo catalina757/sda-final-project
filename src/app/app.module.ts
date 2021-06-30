@@ -9,6 +9,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {ValidateEqualModule} from 'ng-validate-equal';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PatientDashboardComponent } from './dashboard/patient-dashboard/patient-dashboard.component';
+import { ClinicDashboardComponent } from './dashboard/clinic-dashboard/clinic-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RegisterComponent,
     LoginComponent,
     DashboardComponent,
+    PatientDashboardComponent,
+    ClinicDashboardComponent,
   ],
   imports: [
     BrowserModule,

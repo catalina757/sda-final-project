@@ -50,6 +50,40 @@
       "birthday": "0456-03-23",
       "gender": "male",
       "id": 3
+    },
+    {
+      "userType": "patient",
+      "streetAddress": "Cosminului",
+      "numberAddress": "1",
+      "city": "bucuresti",
+      "postalCode": 920058,
+      "phone": 721345678,
+      "email": "mira@yahoo.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "Mirabela",
+      "lastName": "Constantin",
+      "cnp": 2790203123456,
+      "birthday": "0004-03-12",
+      "gender": "female",
+      "id": 4
+    },
+    {
+      "userType": "patient",
+      "streetAddress": "Cosminului",
+      "numberAddress": "1",
+      "city": "bucuresti",
+      "postalCode": 920058,
+      "phone": 734567890,
+      "email": "mira2@yahoo.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "Mira",
+      "lastName": "Constantin",
+      "cnp": 2810304123456,
+      "birthday": "0004-03-12",
+      "gender": "female",
+      "id": 5
     }
   ],
   "clinics": [
