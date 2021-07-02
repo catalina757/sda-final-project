@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {LoginService} from '../services/login.service';
+import {Component, OnInit} from '@angular/core';
+import {ModalService} from '../services/modal.service';
 
 @Component({
   selector: 'app-medical-specialities',
@@ -7,15 +7,12 @@ import {LoginService} from '../services/login.service';
   styleUrls: ['./medical-specialities.component.css']
 })
 export class MedicalSpecialitiesComponent implements OnInit {
-  public specialities: {id: number, name: string}[] = [];
 
-  constructor(public loginService: LoginService) { }
+  constructor(public modalService: ModalService) { }
 
-  ngOnInit(): any {
-    if(this.loginService.userLogged) {
-      this.specialities = this.loginService.userLogged.specialities!;
-    }
-
+  ngOnInit() {
   }
 
 }
+
+

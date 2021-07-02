@@ -14,6 +14,7 @@ import { ClinicDashboardComponent } from './dashboard/clinic-dashboard/clinic-da
 import { HomeComponent } from './home/home.component';
 import { MedicalSpecialitiesComponent } from './medical-specialities/medical-specialities.component';
 import {NgxWebstorageModule} from 'ngx-webstorage';
+import { ModalComponent } from './medical-specialities/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
     ClinicDashboardComponent,
     HomeComponent,
     MedicalSpecialitiesComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

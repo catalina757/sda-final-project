@@ -2,20 +2,29 @@
 
 <h2>Medical specialities:</h2>
 
-<button>Create new</button>
+<button id="openModal" (click)="this.modalService.openModal()">Create new</button>
+
+<app-modal [modalOpenMessage]="this.modalService.modalOpened" *ngIf="this.modalService.modalOpened"></app-modal>
+
 <label for="search">Search</label>
 <input type="text" id="search" name="search" placeholder="Search">
 
 <table>
     <tr>
         <th>Specialty</th>
+        <th>Description</th>
+        <th>Doctors</th>
         <th>Actions</th>
     </tr>
-    <ng-container *ngFor="let specialty of specialities">
+    <ng-container>
         <tr>
-            <td>{{ specialty.name }}</td>
+            <td>specialty.name</td>
+            <td>specialty.description</td>
+            <td><button>See doctors</button></td>
             <td><button type="button">Edit</button><button type="button">Delete</button></td>
         </tr>
     </ng-container>
+
+<!--    clinica vede tot; pacientul vede primele 3 coloane - adica fara actions-->
 
 </table>

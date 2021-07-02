@@ -1,0 +1,16 @@
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <label for="id">Specialty id:</label>
+        <input id="id" type="text" placeholder="Specialty id">
+        <label for="name">Specialty id:</label>
+        <input id="name" type="text" placeholder="Specialty name">
+        <label for="description">Specialty id:</label>
+        <input id="description" type="text" placeholder="Specialty description">
+
+        <div class="buttons">
+            <button (click)="onCreate()">Create</button>
+            <button (click)="this.modalService.closeModal()">Close</button>
+        </div>
+
+    </div>
+</div>

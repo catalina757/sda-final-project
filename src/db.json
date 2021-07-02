@@ -183,6 +183,20 @@
       "clinicName": "Doctorul",
       "codeAuthorization": 123456,
       "id": 5
+    },
+    {
+      "userType": "clinic",
+      "streetAddress": "str",
+      "numberAddress": "2",
+      "city": "buc",
+      "postalCode": 90909,
+      "phone": 756432678,
+      "email": "angisan@email.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "clinicName": "Angisan",
+      "codeAuthorization": 345678,
+      "id": 6
     }
   ]
 }
