@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
             this.patientService.getPatientsServ().subscribe((patientsList: PatientModel[]) => {
                 this.patientService.allPatients = patientsList;
 
-                this.patientService.allPatients.forEach((patient) => {
+                patientsList.forEach((patient) => {
                     if (form.controls.email.value === patient.email &&
                         form.controls.password.value === patient.password) {
 
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
             this.clinicService.getClinicsServ().subscribe((clinicsList: ClinicModel[]) => {
                 this.clinicService.allClinics = clinicsList;
 
-                this.clinicService.allClinics.forEach((clinic: ClinicModel) => {
+                clinicsList.forEach((clinic: ClinicModel) => {
                     if (form.controls.email.value === clinic.email &&
                         form.controls.password.value === clinic.password) {
 
@@ -82,6 +82,3 @@ export class LoginComponent implements OnInit {
         this.loginService.saveUserLogged();
     }
 }
-
-// https://angular.io/guide/form-validation
-// https://www.npmjs.com/package/ngx-webstorage

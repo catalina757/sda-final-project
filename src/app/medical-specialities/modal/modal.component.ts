@@ -24,28 +24,28 @@ export class ModalComponent implements OnInit {
     this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic:ClinicModel) => {
       this.clinicService.clinic = clinic;
 
-      if(typeof this.clinicService.clinic.specialities === 'undefined') {
-        this.clinicService.clinic.specialities = [];
-        this.clinicService.clinic.specialities.push(form.value);
-        this.clinicService.updateClinic(this.clinicService.clinic).subscribe();
+      if(!this.clinicService.hasSpecialities(clinic)) {
+        clinic.specialities = [];
+        clinic.specialities.push(form.value);
+        this.clinicService.updateClinic(clinic).subscribe();
         this.modalService.closeModal();
         return;
-      }
-
-      let existSpecialty = false;
-
-      for (let i = 0; i < this.clinicService.clinic.specialities.length; i++) {
-        if (form.controls.name.value === this.clinicService.clinic.specialities[i].name) {
-          existSpecialty = true;
-        }
-      }
-
-      if (existSpecialty) {
-        alert("specialty exist!!!");
       } else {
-        this.clinicService.clinic.specialities.push(form.value);
-        this.clinicService.updateClinic(this.clinicService.clinic).subscribe();
-        this.modalService.closeModal();
+        let existSpecialty = false;
+
+        for (let i = 0; i < clinic.specialities!.length; i++) {
+          if (form.controls.name.value === clinic.specialities![i].name) {
+            existSpecialty = true;
+          }
+        }
+
+        if (existSpecialty) {
+          alert("specialty exist!!!");
+        } else {
+          clinic.specialities!.push(form.value);
+          this.clinicService.updateClinic(clinic).subscribe();
+          this.modalService.closeModal();
+        }
       }
     });
   }
