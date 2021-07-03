@@ -16,13 +16,15 @@
         <th>Doctors</th>
         <th>Actions</th>
     </tr>
-    <ng-container>
-        <tr>
-            <td>specialty.name</td>
-            <td>specialty.description</td>
-            <td><button>See doctors</button></td>
-            <td><button type="button">Edit</button><button type="button">Delete</button></td>
-        </tr>
+    <ng-container *ngIf="clinicService.hasSpecialities(this.clinicService.clinic)">
+        <ng-container *ngFor="let specialty of this.clinicService.clinic.specialities">
+            <tr>
+                <td>{{specialty.name}}</td>
+                <td>{{specialty.description}}</td>
+                <td><button>See doctors</button></td>
+                <td><button type="button">Edit</button><button type="button">Delete</button></td>
+            </tr>
+        </ng-container>
     </ng-container>
 
 <!--    clinica vede tot; pacientul vede primele 3 coloane - adica fara actions-->

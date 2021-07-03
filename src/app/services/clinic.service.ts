@@ -22,6 +22,19 @@ export class ClinicService {
   public createClinicServ(clinic: ClinicModel): Observable<ClinicModel> {
     return this.http.post<ClinicModel>(`${this.clinicUrl}`, clinic);
   }
+
+  public getOneClinicServ(id: number): Observable<ClinicModel> {
+    return this.http.get<ClinicModel>(`${this.clinicUrl}/${id}`);
+  }
+
+  public updateClinic(clinic: ClinicModel): Observable<ClinicModel> {
+    return this.http.put<ClinicModel>(`${this.clinicUrl}/${clinic.id}`, clinic);
+  }
+
+  public hasSpecialities(clinic: ClinicModel)
+  {
+    return typeof clinic !== 'undefined' && typeof clinic.specialities !== 'undefined';
+  }
 }
 
 

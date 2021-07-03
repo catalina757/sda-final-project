@@ -1,16 +1,33 @@
 <div class="modal" id="modal">
-    <div class="modal-content">
-        <label for="id">Specialty id:</label>
-        <input id="id" type="text" placeholder="Specialty id">
-        <label for="name">Specialty id:</label>
-        <input id="name" type="text" placeholder="Specialty name">
-        <label for="description">Specialty id:</label>
-        <input id="description" type="text" placeholder="Specialty description">
+    <form class="modal-content" (ngSubmit)="onCreate(specialtyForm)" #specialtyForm="ngForm">
+        <label for="specialtyName">Specialty name:</label>
+        <input id="specialtyName" type="text" name="name" placeholder="Specialty name" ngModel required minlength="3" #specialtyName="ngModel">
 
-        <div class="buttons">
-            <button (click)="onCreate()">Create</button>
-            <button (click)="this.modalService.closeModal()">Close</button>
+        <div *ngIf="!specialtyName.valid && specialtyName.touched">
+            <div *ngIf="specialtyName.errors?.required">
+                Specialty name is required.
+            </div>
+            <div *ngIf="specialtyName.errors?.minlength">
+                Specialty name must be at least 3 characters long.
+            </div>
         </div>
 
-    </div>
+        <label for="specialtyDescription">Specialty description:</label>
+        <input id="specialtyDescription" type="text" name="description" placeholder="Specialty description" ngModel required minlength="3" #specialtyDescription="ngModel">
+
+        <div *ngIf="!specialtyDescription.valid && specialtyDescription.touched">
+            <div *ngIf="specialtyDescription.errors?.required">
+                Specialty description is required.
+            </div>
+            <div *ngIf="specialtyDescription.errors?.minlength">
+                Specialty desscription must be at least 3 characters long.
+            </div>
+        </div>
+
+        <div class="buttons">
+            <input type="submit" value="Create" [disabled]="!specialtyForm.valid">
+            <input type="button" value="Close" (click)="this.modalService.closeModal()">
+        </div>
+
+    </form>
 </div>

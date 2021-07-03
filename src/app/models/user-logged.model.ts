@@ -21,14 +21,12 @@ export class UserLogged {
     confirmPassword: string = "";
 
     specialities?: {
-        id: number,
-        name: string,
-        description: string,
+        name?: string,
+        description?: string,
         doctors?: [
             {
-                id: number,
-                name: string,
-                description: string
+                name?: string,
+                description?: string
             }
         ]
     }[] = [];

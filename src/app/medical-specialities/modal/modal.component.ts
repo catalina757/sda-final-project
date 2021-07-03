@@ -3,6 +3,7 @@ import {ClinicModel} from '../../models/clinic.model';
 import {LoginService} from '../../services/login.service'
 import {ClinicService} from '../../services/clinic.service';
 import {ModalService} from '../../services/modal.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-modal',
@@ -12,8 +13,6 @@ import {ModalService} from '../../services/modal.service';
 export class ModalComponent implements OnInit {
   @Input() modalOpenMessage: boolean = false;
 
-  public specialities: Specialty[] = [];
-
   constructor(public loginService: LoginService,
               public clinicService: ClinicService,
               public modalService: ModalService) { }
@@ -21,50 +20,34 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCreate() {
-    this
-    this.loginService.userLogged["specialities"] = [];
-    this.loginService.userLogged.specialities = [
-      {id: 1, name: 'something', description: 'descriere descriere', doctors: [{id: 1, name: 'Doctor', description: "description of the doctor"}]},
-      {id: 2, name: 'anything else', description: 'descriere descriere descriere'},
-    ];
+  onCreate(form: NgForm) {
+    this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic:ClinicModel) => {
+      this.clinicService.clinic = clinic;
 
-    this.specialities = this.loginService.userLogged.specialities;
+      if(typeof this.clinicService.clinic.specialities === 'undefined') {
+        this.clinicService.clinic.specialities = [];
+        this.clinicService.clinic.specialities.push(form.value);
+        this.clinicService.updateClinic(this.clinicService.clinic).subscribe();
+        this.modalService.closeModal();
+        return;
+      }
 
-    // if(this.loginService.userLogged) {
-    // this.specialities = this.loginService.userLogged.specialities!;
-    // }
+      let existSpecialty = false;
 
-    this.findClinic();
-  }
-
-  findClinic() {
-    this.clinicService.getClinicsServ().subscribe((clinicsList: ClinicModel[]) => {
-      this.clinicService.allClinics = clinicsList;
-
-      for (let i = 0; i< clinicsList.length; i++) {
-        if(clinicsList[i].id === this.loginService.userLogged.id) {
-          this.clinicService.clinic = clinicsList[i];
-          this.clinicService.clinic.specialities = this.loginService.userLogged.specialities;
-
-          console.log(this.clinicService.clinic);
-          console.log(this.loginService.userLogged);
+      for (let i = 0; i < this.clinicService.clinic.specialities.length; i++) {
+        if (form.controls.name.value === this.clinicService.clinic.specialities[i].name) {
+          existSpecialty = true;
         }
       }
-    })
+
+      if (existSpecialty) {
+        alert("specialty exist!!!");
+      } else {
+        this.clinicService.clinic.specialities.push(form.value);
+        this.clinicService.updateClinic(this.clinicService.clinic).subscribe();
+        this.modalService.closeModal();
+      }
+    });
   }
 }
 
-//de mutat in models
-export interface Specialty {
-  id: number,
-  name: string,
-  description: string,
-  doctors? : [
-    {
-      id: number,
-      name: string,
-      description: string
-    }
-  ]
-}

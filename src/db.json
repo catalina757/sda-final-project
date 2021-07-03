@@ -116,17 +116,7 @@
       "confirmPassword": "123456",
       "clinicName": "clinica1",
       "codeAuthorization": 345678,
-      "id": 1,
-      "specialities": [
-        {
-          "id": 1,
-          "name": "Allergology"
-        },
-        {
-          "id": 2,
-          "name": "Cardiology"
-        }
-      ]
+      "id": 1
     },
     {
       "userType": "clinic",
@@ -196,7 +186,21 @@
       "confirmPassword": "123456",
       "clinicName": "Angisan",
       "codeAuthorization": 345678,
-      "id": 6
+      "id": 6,
+      "specialities": [
+        {
+          "name": "Allergology",
+          "description": "Allergology"
+        },
+        {
+          "name": "Pneumology",
+          "description": "Pneumology"
+        },
+        {
+          "name": "Cardiology",
+          "description": "Cardiology"
+        }
+      ]
     }
   ]
 }
