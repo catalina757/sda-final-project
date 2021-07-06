@@ -12,9 +12,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PatientDashboardComponent } from './dashboard/patient-dashboard/patient-dashboard.component';
 import { ClinicDashboardComponent } from './dashboard/clinic-dashboard/clinic-dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { MedicalSpecialitiesComponent } from './medical-specialities/medical-specialities.component';
+import { SpecialitiesComponent } from './specialities/specialities.component';
 import {NgxWebstorageModule} from 'ngx-webstorage';
-import { ModalComponent } from './medical-specialities/modal/modal.component';
+import { ModalComponent } from './specialities/modal/modal.component';
+import { TopNavComponent } from './navbar/top-nav/top-nav.component';
+import { AsideNavComponent } from './navbar/aside-nav/aside-nav.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,10 @@ import { ModalComponent } from './medical-specialities/modal/modal.component';
     PatientDashboardComponent,
     ClinicDashboardComponent,
     HomeComponent,
-    MedicalSpecialitiesComponent,
+    SpecialitiesComponent,
     ModalComponent,
+    TopNavComponent,
+    AsideNavComponent,
   ],
   imports: [
     BrowserModule,

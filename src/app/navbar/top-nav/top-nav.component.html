@@ -1,0 +1,24 @@
+<nav>
+    <h1>MedApp</h1>
+
+    <div class="top-nav-links">
+        <ng-container *ngIf="!loginService.userLogged else isLogged">
+            <a routerLink="home">Home</a>
+            <a routerLink="login">Login</a>
+            <a routerLink="register">Register</a>
+        </ng-container>
+
+        <ng-template #isLogged>
+            <div  class="user" *ngIf="loginService.userLogged.userType === 'clinic'">
+                {{loginService.userLogged.clinicName}}
+            </div>
+
+            <div class="user" *ngIf="loginService.userLogged.userType === 'patient'">
+                <img src="/assets/images/user-female-avatar-woman.png" alt="image">
+                <p>{{loginService.userLogged.firstName}} {{loginService.userLogged.lastName}}</p>
+            </div>
+
+            <button type="button" (click)="loginService.logout()">Logout</button>
+        </ng-template>
+    </div>
+</nav>

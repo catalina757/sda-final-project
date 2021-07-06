@@ -24,9 +24,11 @@ export class LoginService {
   }
 
   logout() {
-    if(this.userLogged) {
+    if (this.userLogged) {
       this.router.navigate(['login'])
-          .then(()=> this.userLogged = new UserLogged())
+          .then(() => {
+            this.localStorage.clear("userLogged");
+          });
     }
     this.retrieveUserLogged();
   }

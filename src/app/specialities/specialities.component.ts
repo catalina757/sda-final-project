@@ -6,12 +6,12 @@ import {ClinicModel} from '../models/clinic.model';
 
 
 @Component({
-  selector: 'app-medical-specialities',
-  templateUrl: './medical-specialities.component.html',
-  styleUrls: ['./medical-specialities.component.css']
+  selector: 'app-specialities',
+  templateUrl: './specialities.component.html',
+  styleUrls: ['./specialities.component.css']
 })
 
-export class MedicalSpecialitiesComponent implements OnInit {
+export class SpecialitiesComponent implements OnInit {
 
   constructor(public modalService: ModalService,
               public clinicService: ClinicService,

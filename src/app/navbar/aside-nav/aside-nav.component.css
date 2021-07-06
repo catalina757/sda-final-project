@@ -1,0 +1,19 @@
+nav {
+    background-color: rgba(235, 250, 241, 0.5);
+    height: 100%;
+    width: 12rem;
+    position: fixed;
+    z-index: 1;
+    top: 5rem;
+    left: 0;
+    overflow-x: hidden;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.aside-nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 3rem;
+}

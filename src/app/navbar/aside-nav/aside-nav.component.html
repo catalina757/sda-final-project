@@ -1,0 +1,14 @@
+<nav *ngIf="loginService.userLogged">
+    <div>
+        <div class="aside-nav-links">
+            <a routerLink="dashboard">Dashboard</a>
+
+            <ng-container *ngIf="loginService.userLogged.userType === 'clinic'">
+                <a>Appointments</a>
+                <a routerLink="dashboard/specialities">Specialities</a>
+                <a>Doctors</a>
+                <a>Patients</a>
+            </ng-container>
+        </div>
+    </div>
+</nav>

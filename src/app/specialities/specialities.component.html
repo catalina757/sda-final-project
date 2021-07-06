@@ -2,9 +2,9 @@
 
 <h2>Medical specialities:</h2>
 
-<button id="openModal" (click)="this.modalService.openModal()">Create new</button>
+<button id="openModal" (click)="modalService.openModal()">Create new</button>
 
-<app-modal [modalOpenMessage]="this.modalService.modalOpened" *ngIf="this.modalService.modalOpened"></app-modal>
+<app-modal [modalOpenMessage]="modalService.modalOpened" *ngIf="modalService.modalOpened"></app-modal>
 
 <label for="search">Search</label>
 <input type="text" id="search" name="search" placeholder="Search">
@@ -16,8 +16,8 @@
         <th>Doctors</th>
         <th>Actions</th>
     </tr>
-    <ng-container *ngIf="clinicService.hasSpecialities(this.clinicService.clinic)">
-        <ng-container *ngFor="let specialty of this.clinicService.clinic.specialities">
+    <ng-container *ngIf="clinicService.hasSpecialities(clinicService.clinic)">
+        <ng-container *ngFor="let specialty of clinicService.clinic.specialities">
             <tr>
                 <td>{{specialty.name}}</td>
                 <td>{{specialty.description}}</td>
@@ -28,5 +28,6 @@
     </ng-container>
 
 <!--    clinica vede tot; pacientul vede primele 3 coloane - adica fara actions-->
+<!--    in model clinica - relatii clinica-pacient => adaug proprietate: pacienti [] cu {fiecare pacient al clinicii cu detalii}-->
 
 </table>
