@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../services/login.service';
+import {ClinicService} from '../../services/clinic.service';
+import {AppointmentService} from '../../services/appointment.service';
 
 @Component({
   selector: 'app-aside-nav',
@@ -8,9 +10,12 @@ import {LoginService} from '../../services/login.service';
 })
 export class AsideNavComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService,
+              public clinicService: ClinicService,
+              public appointmentService: AppointmentService) { }
 
   ngOnInit(): void {
   }
+
 
 }

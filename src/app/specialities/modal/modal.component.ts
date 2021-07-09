@@ -24,10 +24,10 @@ export class ModalComponent implements OnInit {
     this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic:ClinicModel) => {
       this.clinicService.clinic = clinic;
 
-      if(!this.clinicService.hasSpecialities(clinic)) {
+      if(!this.clinicService.hasSpecialitiesServ(clinic)) {
         clinic.specialities = [];
         clinic.specialities.push(form.value);
-        this.clinicService.updateClinic(clinic).subscribe();
+        this.clinicService.updateClinicServ(clinic).subscribe();
         this.modalService.closeModal();
         return;
       } else {
@@ -43,7 +43,7 @@ export class ModalComponent implements OnInit {
           alert("specialty exist!!!");
         } else {
           clinic.specialities!.push(form.value);
-          this.clinicService.updateClinic(clinic).subscribe();
+          this.clinicService.updateClinicServ(clinic).subscribe();
           this.modalService.closeModal();
         }
       }

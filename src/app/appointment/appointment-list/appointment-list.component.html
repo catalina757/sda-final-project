@@ -1,0 +1,27 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh">
+    <p>appointment-list works!</p>
+    <div>
+        <table>
+            <thead>
+            <tr style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center">
+                <th>Clinic name</th>
+                <th>Appointment date</th>
+                <th>Appointment time</th>
+                <th>Specialty</th>
+                <th>userLoggedId</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appointment of appointmentService.allAppointments" style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center">
+                    <ng-container  *ngIf="appointment.userLoggedId === loginService.userLogged.id">
+                        <td>{{ appointment.clinicId }}</td>
+                        <td>{{ appointment.date }}</td>
+                        <td>{{ appointment.time }}</td>
+                        <td>{{ appointment.specialty }}</td>
+                        <td>{{  appointment.userLoggedId}}</td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

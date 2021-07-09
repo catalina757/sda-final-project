@@ -1,0 +1,21 @@
+<div>
+    <table>
+        <thead>
+        <tr style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center">
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Book appointment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let clinic of clinicService.allClinics" style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center">
+            <td>{{ clinic.clinicName }}</td>
+            <td>{{ clinic.phone }}</td>
+            <td>{{ clinic.email }}</td>
+            <td><button (click)="this.appointmentService.openBookAppointmentServ(clinic)"> + </button></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

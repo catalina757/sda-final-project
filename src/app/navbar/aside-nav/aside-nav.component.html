@@ -9,6 +9,11 @@
                 <a>Doctors</a>
                 <a>Patients</a>
             </ng-container>
+
+            <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
+                <a routerLink="dashboard/appointments" (click)="appointmentService.openAppointmentList(appointmentService.allAppointments)">My appointments</a>
+                <a routerLink="dashboard/clinics">Clinics</a>
+            </ng-container>
         </div>
     </div>
 </nav>

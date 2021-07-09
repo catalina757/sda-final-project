@@ -20,6 +20,10 @@ export class UserLogged {
     password: string = "";
     confirmPassword: string = "";
 
+    appointmentsId?: [
+        {id: number}
+    ];
+
     specialities?: {
         name?: string,
         description?: string,

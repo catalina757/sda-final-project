@@ -17,6 +17,10 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
 import { ModalComponent } from './specialities/modal/modal.component';
 import { TopNavComponent } from './navbar/top-nav/top-nav.component';
 import { AsideNavComponent } from './navbar/aside-nav/aside-nav.component';
+import { ClinicsComponent } from './clinics/clinics.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { AppointmentListComponent } from './appointment/appointment-list/appointment-list.component';
+import { AppointmentBookComponent } from './appointment/appointment-book/appointment-book.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { AsideNavComponent } from './navbar/aside-nav/aside-nav.component';
     ModalComponent,
     TopNavComponent,
     AsideNavComponent,
+    ClinicsComponent,
+    AppointmentComponent,
+    AppointmentListComponent,
+    AppointmentBookComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@
         <th>Doctors</th>
         <th>Actions</th>
     </tr>
-    <ng-container *ngIf="clinicService.hasSpecialities(clinicService.clinic)">
+    <ng-container *ngIf="clinicService.hasSpecialitiesServ(clinicService.clinic)">
         <ng-container *ngFor="let specialty of clinicService.clinic.specialities">
             <tr>
                 <td>{{specialty.name}}</td>

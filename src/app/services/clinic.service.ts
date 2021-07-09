@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ClinicModel} from '../models/clinic.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,19 +20,19 @@ export class ClinicService {
     return this.http.get<ClinicModel[]>(`${this.clinicUrl}`);
   }
 
-  public createClinicServ(clinic: ClinicModel): Observable<ClinicModel> {
-    return this.http.post<ClinicModel>(`${this.clinicUrl}`, clinic);
-  }
-
   public getOneClinicServ(id: number): Observable<ClinicModel> {
     return this.http.get<ClinicModel>(`${this.clinicUrl}/${id}`);
   }
 
-  public updateClinic(clinic: ClinicModel): Observable<ClinicModel> {
+  public createClinicServ(clinic: ClinicModel): Observable<ClinicModel> {
+    return this.http.post<ClinicModel>(`${this.clinicUrl}`, clinic);
+  }
+
+  public updateClinicServ(clinic: ClinicModel): Observable<ClinicModel> {
     return this.http.put<ClinicModel>(`${this.clinicUrl}/${clinic.id}`, clinic);
   }
 
-  public hasSpecialities(clinic: ClinicModel)
+  public hasSpecialitiesServ(clinic: ClinicModel)
   {
     return typeof clinic !== 'undefined' && typeof clinic.specialities !== 'undefined';
   }
