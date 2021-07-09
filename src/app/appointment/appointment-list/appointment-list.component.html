@@ -1,24 +1,29 @@
+<p>appointment-list works!</p>
+<div>
+    <a routerLink="/dashboard/clinics">Add appointment</a>
+</div>
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh">
-    <p>appointment-list works!</p>
     <div>
         <table>
             <thead>
-            <tr style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center">
+            <tr style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25p">
                 <th>Clinic name</th>
+                                <th>userLoggedId</th>
                 <th>Appointment date</th>
                 <th>Appointment time</th>
                 <th>Specialty</th>
-                <th>userLoggedId</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let appointment of appointmentService.allAppointments" style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center">
+                <tr *ngFor="let appointment of appointmentService.allAppointments" style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25p">
                     <ng-container  *ngIf="appointment.userLoggedId === loginService.userLogged.id">
                         <td>{{ appointment.clinicId }}</td>
+                                                <td>{{  appointment.userLoggedId}}</td>
                         <td>{{ appointment.date }}</td>
                         <td>{{ appointment.time }}</td>
                         <td>{{ appointment.specialty }}</td>
-                        <td>{{  appointment.userLoggedId}}</td>
+                        <td><button>Edit</button><button (click)="deleteAppointment(appointment)">Delete</button></td>
                     </ng-container>
                 </tr>
             </tbody>

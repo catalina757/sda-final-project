@@ -20,4 +20,10 @@ export class AppointmentListComponent implements OnInit {
     })
   }
 
+  deleteAppointment(appointment: AppointmentModel) {
+    this.appointmentService.deleteAppointmentServ(appointment).subscribe(
+        () => (this.appointmentService.allAppointments = this.appointmentService.allAppointments.filter((a) => a.id !== appointment.id)))
+    return this.appointmentService.allAppointments;
+  }
+
 }

@@ -34,6 +34,11 @@ export class AppointmentService {
     return this.http.put<AppointmentModel>(`${this.appointmentUrl}/${appointment.id}`, appointment);
   }
 
+
+  public deleteAppointmentServ(appointment: AppointmentModel): Observable<AppointmentModel> {
+      return  this.http.delete<AppointmentModel>(`${this.appointmentUrl}/${appointment.id}`);
+  }
+
   public openBookAppointmentServ(clinicSelected: ClinicModel) {
     this.router.navigate(['/dashboard/appointments/book'])
         .then(() => {
