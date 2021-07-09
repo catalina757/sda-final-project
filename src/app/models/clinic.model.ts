@@ -1,16 +1,6 @@
-export class ClinicModel {
-    id?: number;
-    userType: string = "";
-    clinicName: string = "";
-    authorizationCode: string = "";
-    streetAddress: string = "";
-    numberAddress: string = "";
-    city: string = "";
-    postalCode: string = "";
-    phone: string = "";
-    email: string = "";
-    password: string = "";
-    confirmPassword: string = "";
+import {UserLogged} from './user-logged.model';
+
+export class ClinicModel extends UserLogged{
     specialities?: {
         name?: string,
         description?: string,

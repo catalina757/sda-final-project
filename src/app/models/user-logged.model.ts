@@ -1,4 +1,4 @@
-export class UserLogged {
+export class UserLogged{
     id?: number;
     userType: string = "";
 
@@ -18,22 +18,5 @@ export class UserLogged {
     phone: string = "";
     email: string = "";
     password: string = "";
-    confirmPassword: string = "";
-
-    appointmentsId?: [
-        {id: number}
-    ];
-
-    specialities?: {
-        name?: string,
-        description?: string,
-        doctors?: [
-            {
-                name?: string,
-                description?: string
-            }
-        ]
-    }[] = [];
-
 }
 

@@ -17,9 +17,9 @@
             </thead>
             <tbody>
                 <tr *ngFor="let appointment of appointmentService.allAppointments" style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25p">
-                    <ng-container  *ngIf="appointment.userLoggedId === loginService.userLogged.id">
+                    <ng-container  *ngIf="appointment.patientId === loginService.userLogged.id">
                         <td>{{ appointment.clinicId }}</td>
-                                                <td>{{  appointment.userLoggedId}}</td>
+                                                <td>{{  appointment.patientId}}</td>
                         <td>{{ appointment.date }}</td>
                         <td>{{ appointment.time }}</td>
                         <td>{{ appointment.specialty }}</td>

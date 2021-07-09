@@ -69,6 +69,10 @@
         {
           "name": "Dermatology",
           "description": "Dermatology"
+        },
+        {
+          "name": "Surgery",
+          "description": "Surgery"
         }
       ]
     },
@@ -123,12 +127,32 @@
           "description": "Surgery"
         }
       ]
+    },
+    {
+      "userType": "clinic",
+      "streetAddress": "Str. Cantemir 64, 34",
+      "numberAddress": "34",
+      "city": "Iasi",
+      "postalCode": 98469,
+      "phone": 725678901,
+      "email": "medicover@email.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "clinicName": "Medicover",
+      "codeAuthorization": 234567,
+      "id": 4,
+      "specialities": [
+        {
+          "name": "Allergology",
+          "description": "Allergology"
+        }
+      ]
     }
   ],
   "appointments": [
     {
       "clinicId": 1,
-      "userLoggedId": 1,
+      "patientId": 1,
       "firstName": "Catalina",
       "lastName": "Condrea",
       "CNP": 2810304123456,
@@ -143,7 +167,7 @@
     },
     {
       "clinicId": 2,
-      "userLoggedId": 1,
+      "patientId": 1,
       "firstName": "Catalina",
       "lastName": "Condrea",
       "CNP": 2810304123456,
@@ -158,7 +182,7 @@
     },
     {
       "clinicId": 2,
-      "userLoggedId": 1,
+      "patientId": 1,
       "firstName": "Catalina",
       "lastName": "Condrea",
       "CNP": 2810304123456,
@@ -173,7 +197,7 @@
     },
     {
       "clinicId": 3,
-      "userLoggedId": 2,
+      "patientId": 2,
       "firstName": "Camelia",
       "lastName": "Dragomir",
       "CNP": 2810304123456,
@@ -188,7 +212,7 @@
     },
     {
       "clinicId": 3,
-      "userLoggedId": 2,
+      "patientId": 2,
       "firstName": "Camelia",
       "lastName": "Dragomir",
       "CNP": 2810304123456,
@@ -200,6 +224,120 @@
       "date": "2021-07-03",
       "time": "10:57",
       "id": 13
+    },
+    {
+      "clinicId": 3,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "CNP": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": [
+        {
+          "name": "Allergology",
+          "description": "Allergology"
+        },
+        {
+          "name": "Surgery",
+          "description": "Surgery"
+        }
+      ],
+      "date": "",
+      "time": "",
+      "id": 14
+    },
+    {
+      "clinicId": 3,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "CNP": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Surgery",
+      "date": "",
+      "time": "",
+      "id": 15
+    },
+    {
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "CNP": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Pneumology",
+      "date": "",
+      "time": "",
+      "id": 16
+    },
+    {
+      "clinicId": 2,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "CNP": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Cardiology",
+      "date": "",
+      "time": "",
+      "id": 17
+    },
+    {
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "CNP": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Surgery",
+      "date": "",
+      "time": "",
+      "id": 18
+    },
+    {
+      "clinicId": 2,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "CNP": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Cardiology",
+      "date": "",
+      "time": "",
+      "id": 19
+    },
+    {
+      "clinicId": 4,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "CNP": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Allergology",
+      "date": "",
+      "time": "",
+      "id": 20
     }
   ]
 }
