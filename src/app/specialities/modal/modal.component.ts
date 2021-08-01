@@ -13,8 +13,8 @@ import {NgForm} from '@angular/forms';
 export class ModalComponent implements OnInit {
   @Input() modalOpenMessage: boolean = false;
 
-  constructor(public loginService: LoginService,
-              public clinicService: ClinicService,
+  constructor(private loginService: LoginService,
+              private clinicService: ClinicService,
               public modalService: ModalService) { }
 
   ngOnInit(): void {

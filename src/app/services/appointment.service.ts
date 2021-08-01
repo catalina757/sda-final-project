@@ -5,7 +5,6 @@ import {AppointmentModel} from '../models/appointment.model';
 import {ClinicModel} from '../models/clinic.model';
 import {Router} from '@angular/router';
 import {ClinicService} from './clinic.service';
-import {LoginService} from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +18,14 @@ export class AppointmentService {
 
   constructor(private http: HttpClient,
               private router: Router,
-              public clinicService:ClinicService,
-              public loginService: LoginService) { }
+              public clinicService:ClinicService) { }
 
   public getAppointmentsServ():Observable<AppointmentModel[]> {
     return this.http.get<AppointmentModel[]>(`${this.appointmentUrl}`);
+  }
+
+  public getOneAppointmentServ(id: number): Observable<AppointmentModel> {
+      return this.http.get<AppointmentModel>(`${this.appointmentUrl}/${id}`);
   }
 
   public createAppointmentServ(appointment:AppointmentModel): Observable<AppointmentModel> {
@@ -34,25 +36,15 @@ export class AppointmentService {
     return this.http.put<AppointmentModel>(`${this.appointmentUrl}/${appointment.id}`, appointment);
   }
 
-
   public deleteAppointmentServ(appointment: AppointmentModel): Observable<AppointmentModel> {
-      return  this.http.delete<AppointmentModel>(`${this.appointmentUrl}/${appointment.id}`);
+      return this.http.delete<AppointmentModel>(`${this.appointmentUrl}/${appointment.id}`);
   }
 
   public openBookAppointmentServ(clinicSelected: ClinicModel) {
-    this.router.navigate(['/dashboard/appointments/book'])
+    this.router.navigate(['/dashboard/book-appointment'])
         .then(() => {
           this.clinicService.clinic = clinicSelected;
           return this.clinicService.clinic;
         });
   }
-
-  public openAppointmentList(appointments: AppointmentModel[]) {
-    this.router.navigate(['/dashboard/appointments'])
-        .then(() => {
-          this.allAppointments = appointments;
-          return this.allAppointments;
-        });
-  }
-
 }

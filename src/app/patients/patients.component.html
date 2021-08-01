@@ -1,0 +1,23 @@
+ <table>
+    <thead>
+        <tr style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center; grid-column-gap: 25px">
+            <th>Name</th>
+            <th>Id</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let patient of patientService.allPatients; let appointment of appointmentService.allAppointments">
+        <tr *ngIf="appointment.id === loginService.userLogged.id" style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center; grid-column-gap: 25px">
+            <td>{{ patient.firstName }} {{ patient.lastName }}</td>
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.phone }}</td>
+            <td>{{ patient.email }}</td>
+            <td><button>Click</button></td>
+        </tr>
+    </tbody>
+ </table>
+
+
+

@@ -25,10 +25,6 @@ export class AppointmentBookComponent implements OnInit {
     return this.appointmentService.allAppointments;
   }
 
-  set allAppointments(value: AppointmentModel[]) {
-    this.appointmentService.allAppointments = value;
-  }
-
   onSubmit(form: NgForm) {
     console.log(form.value);
     console.log(this.clinicService.clinic);

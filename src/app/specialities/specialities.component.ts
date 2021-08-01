@@ -15,11 +15,11 @@ export class SpecialitiesComponent implements OnInit {
 
   constructor(public modalService: ModalService,
               public clinicService: ClinicService,
-              public loginService: LoginService) {}
+              private loginService: LoginService) {}
 
 
   ngOnInit() {
-    this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic: ClinicModel) => {
+    this.clinicService. getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic: ClinicModel) => {
       this.clinicService.clinic = clinic;
     })
   }

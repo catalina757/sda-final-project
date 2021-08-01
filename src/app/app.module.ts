@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,9 +17,9 @@ import { ModalComponent } from './specialities/modal/modal.component';
 import { TopNavComponent } from './navbar/top-nav/top-nav.component';
 import { AsideNavComponent } from './navbar/aside-nav/aside-nav.component';
 import { ClinicsComponent } from './clinics/clinics.component';
-import { AppointmentComponent } from './appointment/appointment.component';
 import { AppointmentListComponent } from './appointment/appointment-list/appointment-list.component';
 import { AppointmentBookComponent } from './appointment/appointment-book/appointment-book.component';
+import { PatientsComponent } from './patients/patients.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +35,9 @@ import { AppointmentBookComponent } from './appointment/appointment-book/appoint
     TopNavComponent,
     AsideNavComponent,
     ClinicsComponent,
-    AppointmentComponent,
     AppointmentListComponent,
     AppointmentBookComponent,
+    PatientsComponent,
   ],
   imports: [
     BrowserModule,

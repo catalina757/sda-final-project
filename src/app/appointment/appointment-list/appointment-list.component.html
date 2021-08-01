@@ -1,32 +1,60 @@
 <p>appointment-list works!</p>
-<div>
-    <a routerLink="/dashboard/clinics">Add appointment</a>
-</div>
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh">
-    <div>
+
+<div class="d-flex flex-column align-items-center">
+    <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
+        <div class="mb-5">
+            <a routerLink="/dashboard/clinics">Add appointment</a>
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                <tr style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25px">
+                    <th>Clinic name</th>
+                    <th>userLoggedId</th>
+                    <th>Appointment date</th>
+                    <th>Appointment time</th>
+                    <th>Specialty</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let appointment of appointmentService.allAppointments">
+                    <tr  *ngIf="appointment.patientId === loginService.userLogged.id" style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25px">
+                        <td>{{ appointment.clinicId }}</td>
+                        <td>{{  appointment.patientId}}</td>
+                        <td>{{ appointment.date }}</td>
+                        <td>{{ appointment.time }}</td>
+                        <td>{{ appointment.specialty }}</td>
+                        <td><button>Edit</button><button (click)="deleteAppointment(appointment)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="loginService.userLogged.userType === 'clinic'">
         <table>
             <thead>
-            <tr style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25p">
-                <th>Clinic name</th>
-                                <th>userLoggedId</th>
+            <tr style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25px">
+                <th>Patient name</th>
+                <th>userLoggedId</th>
                 <th>Appointment date</th>
                 <th>Appointment time</th>
                 <th>Specialty</th>
                 <th>Actions</th>
             </tr>
             </thead>
-            <tbody>
-                <tr *ngFor="let appointment of appointmentService.allAppointments" style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25p">
-                    <ng-container  *ngIf="appointment.patientId === loginService.userLogged.id">
-                        <td>{{ appointment.clinicId }}</td>
-                                                <td>{{  appointment.patientId}}</td>
-                        <td>{{ appointment.date }}</td>
-                        <td>{{ appointment.time }}</td>
-                        <td>{{ appointment.specialty }}</td>
-                        <td><button>Edit</button><button (click)="deleteAppointment(appointment)">Delete</button></td>
-                    </ng-container>
+            <tbody *ngFor="let appointment of appointmentService.allAppointments">
+                <tr  *ngIf="appointment.clinicId === loginService.userLogged.id" style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25p">
+                    <td>{{ appointment.clinicId }}</td>
+                    <td>{{  appointment.patientId}}</td>
+                    <td>{{ appointment.date }}</td>
+                    <td>{{ appointment.time }}</td>
+                    <td>{{ appointment.specialty }}</td>
+                    <td><button>Edit</button><button (click)="deleteAppointment(appointment)">Delete</button></td>
                 </tr>
             </tbody>
         </table>
-    </div>
+    </ng-container>
 </div>

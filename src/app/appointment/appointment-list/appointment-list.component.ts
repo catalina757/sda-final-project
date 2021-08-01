@@ -11,7 +11,6 @@ import {LoginService} from '../../services/login.service';
 export class AppointmentListComponent implements OnInit {
 
   constructor(public appointmentService: AppointmentService,
-
               public loginService: LoginService) { }
 
   ngOnInit(): void {

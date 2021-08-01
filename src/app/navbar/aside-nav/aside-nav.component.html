@@ -4,15 +4,15 @@
             <a routerLink="dashboard">Dashboard</a>
 
             <ng-container *ngIf="loginService.userLogged.userType === 'clinic'">
-                <a>Appointments</a>
+                <a routerLink="dashboard/appointments">Appointments</a>
                 <a routerLink="dashboard/specialities">Specialities</a>
                 <a>Doctors</a>
-                <a>Patients</a>
+                <a routerLink="dashboard/patients">Patients</a>
             </ng-container>
 
             <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
-                <a routerLink="dashboard/appointments" (click)="appointmentService.openAppointmentList(appointmentService.allAppointments)">My appointments</a>
-                <a routerLink="dashboard/clinics">Clinics</a>
+                <a routerLink="dashboard/appointments">My appointments list</a>
+                <a routerLink="dashboard/clinics">Clinics - book appointment</a>
             </ng-container>
         </div>
     </div>
