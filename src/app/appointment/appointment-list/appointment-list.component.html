@@ -1,17 +1,14 @@
-<p>appointment-list works!</p>
-
-<div class="d-flex flex-column align-items-center">
+<div>
     <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
-        <div class="mb-5">
-            <a routerLink="/dashboard/clinics">Add appointment</a>
+        <div>
+            <a routerLink="/clinics">Add appointment</a>
         </div>
 
-        <div>
-            <table>
+        <div class="table-responsive">
+            <table class="table table-hover">
                 <thead>
-                <tr style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25px">
+                <tr>
                     <th>Clinic name</th>
-                    <th>userLoggedId</th>
                     <th>Appointment date</th>
                     <th>Appointment time</th>
                     <th>Specialty</th>
@@ -19,9 +16,8 @@
                 </tr>
                 </thead>
                 <tbody *ngFor="let appointment of appointmentService.allAppointments">
-                    <tr  *ngIf="appointment.patientId === loginService.userLogged.id" style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25px">
+                    <tr  *ngIf="appointment.patientId === loginService.userLogged.id">
                         <td>{{ appointment.clinicId }}</td>
-                        <td>{{  appointment.patientId}}</td>
                         <td>{{ appointment.date }}</td>
                         <td>{{ appointment.time }}</td>
                         <td>{{ appointment.specialty }}</td>
@@ -30,31 +26,40 @@
                 </tbody>
             </table>
         </div>
-
     </ng-container>
 
     <ng-container *ngIf="loginService.userLogged.userType === 'clinic'">
-        <table>
-            <thead>
-            <tr style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25px">
-                <th>Patient name</th>
-                <th>userLoggedId</th>
-                <th>Appointment date</th>
-                <th>Appointment time</th>
-                <th>Specialty</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody *ngFor="let appointment of appointmentService.allAppointments">
-                <tr  *ngIf="appointment.clinicId === loginService.userLogged.id" style="display: grid; grid-template-columns: repeat(6, 1fr); justify-items: center; grid-column-gap: 25p">
-                    <td>{{ appointment.clinicId }}</td>
-                    <td>{{  appointment.patientId}}</td>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Patient name</th>
+                    <th>CNP</th>
+                    <th>Date of birth</th>
+                    <th>Gender</th>
+                    <th>Appointment date</th>
+                    <th>Appointment time</th>
+                    <th>Specialty</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let appointment of appointmentService.allAppointments">
+                <tr  *ngIf="appointment.clinicId === loginService.userLogged.id">
+                    <td>{{ appointment.firstName }} {{ appointment.lastName }}</td>
+                    <td>{{ appointment.cnp }}</td>
+                    <td>{{  appointment.birthday}}</td>
+                    <td>{{ appointment.gender }}</td>
                     <td>{{ appointment.date }}</td>
                     <td>{{ appointment.time }}</td>
                     <td>{{ appointment.specialty }}</td>
+                    <td>{{ appointment.email }}</td>
+                    <td>{{ appointment.phone }}</td>
                     <td><button>Edit</button><button (click)="deleteAppointment(appointment)">Delete</button></td>
                 </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </ng-container>
 </div>

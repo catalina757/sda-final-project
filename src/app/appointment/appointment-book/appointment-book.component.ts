@@ -26,14 +26,12 @@ export class AppointmentBookComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
-    console.log(this.clinicService.clinic);
-
-    this.appointmentService.createAppointmentServ(form.value).subscribe((newAppointment: AppointmentModel) => {
+    this.appointmentService.createAppointmentServ(form.value)
+        .subscribe((newAppointment: AppointmentModel) => {
       this.allAppointments.push(newAppointment);
     });
 
-    this.router.navigate(['dashboard'])
+    this.router.navigate(['appointments'])
         .then(() => console.log(this.allAppointments));
   }
 }

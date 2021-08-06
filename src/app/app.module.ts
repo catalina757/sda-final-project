@@ -20,6 +20,9 @@ import { ClinicsComponent } from './clinics/clinics.component';
 import { AppointmentListComponent } from './appointment/appointment-list/appointment-list.component';
 import { AppointmentBookComponent } from './appointment/appointment-book/appointment-book.component';
 import { PatientsComponent } from './patients/patients.component';
+import { ClinicDetailsComponent } from './clinics/clinic-details/clinic-details.component';
+import { ClinicsListComponent } from './clinics/clinics-list/clinics-list.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { PatientsComponent } from './patients/patients.component';
     AppointmentListComponent,
     AppointmentBookComponent,
     PatientsComponent,
+    ClinicDetailsComponent,
+    ClinicsListComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

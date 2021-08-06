@@ -1,0 +1,55 @@
+
+<!--//incarca o poza a clinicii-->
+<!--//arata numele clinicii-->
+<!--//tabel cu specializarle clinicii-->
+<!--//arata datele de contact-->
+
+<div
+        class="container d-flex flex-column justify-content-center align-items-center"
+        style="margin-top: 80px;margin-bottom: 80px"
+        *ngIf="clinicService.hasSpecialitiesServ(selectedClinic)">
+
+    <h3 class="text-uppercase mb-5" *ngIf="selectedClinic">{{selectedClinic.clinicName}}</h3>
+
+    <div style="max-width:400px;">
+        <img src="https://source.unsplash.com/random/?clinic,doctor" class="img-fluid" alt="image for clinic from unsplash.com">
+    </div>
+
+    <div class="my-5">
+        <h5 class="text-center">Some description about {{selectedClinic.clinicName}}: </h5>
+        <p style="text-indent: 50px">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Alias corporis cumque eos esse iusto natus, officia tenetur. A corporis dolorum incidunt ipsum itaque labore quasi quisquam,
+            reiciendis repellat voluptate. Ad aliquid amet assumenda at cumque, delectus distinctio dolorem ea expedita harum hic ipsam
+            minima minus natus nisi, nostrum odio pariatur perferendis quaerat quasi reprehenderit sapiente sed veritatis!
+            Accusamus assumenda aut consectetur corporis dolores ea ex laborum libero magnam magni molestiae natus neque non numquam obcaecati
+            odit perferendis possimus praesentium quo recusandae rerum, sapiente sed soluta ut velit veniam, voluptas voluptatibus! Culpa debitis
+            ipsa obcaecati.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <ng-container *ngFor="let specialty of selectedClinic.specialities">
+            <div class="col">
+                <div class="card">
+                    <img src="https://source.unsplash.com/random/?clinic,doctor" class="card-img-top" alt="image for specialities from unsplash.com">
+                    <div class="card-body">
+                        <h5 class="card-title">{{specialty.name}}</h5>
+                        <p class="card-text">{{specialty.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="card text-center my-5">
+        <div class="card-header">Our contact details:</div>
+        <div class="card-body row row-cols-1 row-cols-sm-2">
+<!--            <h5 class="card-title">{{selectedClinic.clinicName}}</h5>-->
+            <p class="card-text">Address: {{selectedClinic.postalCode}}, {{selectedClinic.city}}, {{selectedClinic.streetAddress}}, {{selectedClinic.numberAddress}}</p>
+            <p class="card-text">Email: {{selectedClinic.email}}</p>
+            <p class="card-text">Authorization code: {{selectedClinic.codeAuthorization}}</p>
+            <p class="card-text">Phone: {{selectedClinic.phone}}</p>
+        </div>
+    </div>
+</div>
+
+

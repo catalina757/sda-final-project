@@ -8,16 +8,16 @@
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody *ngFor="let patient of patientService.allPatients; let appointment of appointmentService.allAppointments">
-        <tr *ngIf="appointment.id === loginService.userLogged.id" style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center; grid-column-gap: 25px">
-            <td>{{ patient.firstName }} {{ patient.lastName }}</td>
-            <td>{{ patient.id }}</td>
-            <td>{{ patient.phone }}</td>
-            <td>{{ patient.email }}</td>
-            <td><button>Click</button></td>
+    <tbody>
+        <tr *ngFor="let patient of patientService.allPatients"
+            style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center; grid-column-gap: 25px">
+            <ng-container *ngIf="myPatientsId.includes(patient.id!) ">
+                <td>{{ patient.firstName }} {{ patient.lastName }}</td>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.phone }}</td>
+                <td>{{ patient.email }}</td>
+                <td><button>Click</button></td>
+            </ng-container>
         </tr>
     </tbody>
  </table>
-
-
-

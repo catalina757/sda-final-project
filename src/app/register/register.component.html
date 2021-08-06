@@ -1,7 +1,7 @@
-<div class="register-page">
-    <form class="register-form" (ngSubmit)="onSubmit(registeredForm)" #registeredForm="ngForm">
-        <h1 class="logo"> logo </h1>
-        <h1 class="title-register"> {{ title }}</h1>
+<div class="register-page d-flex justify-content-center py-0 py-lg-5 py-md-5 py-sm-0">
+    <form class="register-form d-flex flex-column align-items-center" (ngSubmit)="onSubmit(registeredForm)" #registeredForm="ngForm">
+        <h1 class="text-center py-5"><img src="./assets/images/logo-med-app.png" style="max-width: 20%"></h1>
+        <h3 class="text-center text-muted pb-3"> {{ title }}</h3>
 
         <div class="user-type">
             <div>
@@ -16,7 +16,7 @@
 
         <div class="user-name-code" *ngIf="userType === 'patient'">
             <div>
-                <label for="firstName">First Name</label>
+                <label class="ps-2" for="firstName">First Name: </label>
                 <input id="firstName" type="text" name="firstName" placeholder="First Name" ngModel required minlength="3" #firstName="ngModel">
             </div>
             <div *ngIf="!firstName.valid && firstName.touched">
@@ -29,7 +29,7 @@
             </div>
 
             <div>
-                <label for="lastName">Last Name</label>
+                <label class="ps-2" for="lastName">Last Name: </label>
                 <input id="lastName" type="text" name="lastName" placeholder="Last Name" ngModel required minlength="3" #lastName="ngModel">
             </div>
             <div *ngIf="!lastName.valid && lastName.touched">
@@ -42,7 +42,7 @@
             </div>
 
             <div>
-                <label for="cnp">CNP:</label>
+                <label class="ps-2" for="cnp">CNP: </label>
                 <input id="cnp" type="number" name="cnp" placeholder="CNP" ngModel required minlength="13" pattern="[1-8][0-9]{2}[0,1][0-9][0-9]{2}[0-9]{6}" #cnp="ngModel">
             </div>
             <div *ngIf="!cnp.valid && cnp.touched">
@@ -57,7 +57,7 @@
 
         <div class="user-name-code" *ngIf="userType === 'clinic'">
             <div>
-                <label for="clinicName">Name</label>
+                <label class="ps-2" for="clinicName">Name: </label>
                 <input id="clinicName" type="text" name="clinicName" placeholder="Name" ngModel required minlength="3" #clinicName="ngModel">
             </div>
             <div *ngIf="!clinicName.valid && clinicName.touched">
@@ -70,7 +70,7 @@
             </div>
 
             <div>
-                <label for=codeAuthorization>Authorization Code</label>
+                <label class="ps-2" for=codeAuthorization>Authorization Code: </label>
                 <input id="codeAuthorization" type="number" name="codeAuthorization" placeholder="Authorization Code" ngModel required pattern="[0-9]{6}" #codeAuthorization="ngModel">
             </div>
             <div *ngIf="!codeAuthorization.valid && codeAuthorization.touched">
@@ -85,7 +85,7 @@
 
         <div class="birthday" *ngIf="userType === 'patient'">
             <div>
-                <label for="birthday">Date of birth</label>
+                <label class="ps-2" for="birthday">Date of birth: </label>
                 <input id="birthday" type="date" name="birthday" ngModel required #birthday="ngModel">
                 <div *ngIf="!birthday.valid && birthday.touched">
                     <div class="birthday-error" *ngIf="birthday.errors?.required">
@@ -107,12 +107,12 @@
             </div>
         </div>
 
-        <fieldset>
-            <legend>Address:</legend>
+        <fieldset class="mx-1">
+            <legend class="text-center text-muted">Address:</legend>
 
             <div class="address">
                 <div>
-                    <label for="streetAddress">Street Address</label>
+                    <label class="ps-2" for="streetAddress">Street Address: </label>
                     <input id="streetAddress" type="text" name="streetAddress" placeholder="Street Address" ngModel required minlength="3" #streetAddress="ngModel">
                     <div *ngIf="!streetAddress.valid && streetAddress.touched">
                         <div *ngIf="streetAddress.errors?.required">
@@ -125,7 +125,7 @@
                 </div>
 
                 <div>
-                    <label for="numberAddress">Number</label>
+                    <label class="ps-2" for="numberAddress">Number: </label>
                     <input id="numberAddress" type="text" name="numberAddress" placeholder="Number" ngModel required #numberAddress="ngModel">
                     <div *ngIf="!numberAddress.valid && numberAddress.touched">
                         <div *ngIf="numberAddress.errors?.required">
@@ -137,7 +137,7 @@
 
             <div class="address">
                 <div>
-                    <label for="city">City</label>
+                    <label class="ps-2" for="city">City: </label>
                     <input id="city" type="text" name="city" placeholder="City" ngModel required minlength="3" #city="ngModel">
                     <div *ngIf="!city.valid && city.touched">
                         <div *ngIf="city.errors?.required">
@@ -150,7 +150,7 @@
                 </div>
 
                 <div>
-                    <label for="postalCode">Postal Code</label>
+                    <label class="ps-2" for="postalCode">Postal Code: </label>
                     <input id="postalCode" type="number" name="postalCode" placeholder="Postal Code" ngModel required minlength="6" #postalCode="ngModel">
                     <div *ngIf="!postalCode.valid && postalCode.touched">
                         <div *ngIf="postalCode.errors?.required">
@@ -165,7 +165,7 @@
         </fieldset>
 
         <div class="credentials">
-            <label for="phone">Phone</label>
+            <label class="ps-2" for="phone">Phone: </label>
             <input id="phone" type="number" name="phone" placeholder="Phone" ngModel required pattern="[07]\d{8}" #phone="ngModel">
             <div *ngIf="!phone.valid && phone.touched">
                 <div *ngIf="phone.errors?.required">
@@ -176,7 +176,7 @@
                 </div>
             </div>
 
-            <label for="email">Email</label>
+            <label class="ps-2" for="email">Email: </label>
             <input id="email" type="email" name="email" placeholder="Email" ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel">
             <div *ngIf="!email.valid && email.touched">
                 <div *ngIf="email.errors?.required">
@@ -187,7 +187,7 @@
                 </div>
             </div>
 
-            <label for="password">Password</label>
+            <label class="ps-2" for="password">Password: </label>
             <input id="password" type="password" name="password" placeholder="Password" [(ngModel)]="passwordModel.password" required minlength="6" #password="ngModel">
             <div *ngIf="!password.valid && password.touched">
                 <div *ngIf="password.errors?.required">
@@ -198,7 +198,7 @@
                 </div>
             </div>
 
-            <label for="confirmPassword">Confirm Password</label>
+            <label class="ps-2" for="confirmPassword">Confirm Password: </label>
             <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="passwordModel.confirmPassword" required ngValidateEqual = "password" #confirmPassword="ngModel">
             <div *ngIf="!confirmPassword.valid && confirmPassword.touched">
                 <div *ngIf="confirmPassword.errors?.required">
@@ -210,7 +210,7 @@
             </div>
         </div>
 
-        <input class="submit" type="submit" value="Register" [disabled]="!registeredForm.valid">
+        <input class="submit text-dark" type="submit" value="Register" [disabled]="!registeredForm.valid">
 
         <div *ngIf="registeredForm.submitted" style="font-size: 2rem; margin: 2rem; position: center">Form submitted!</div>
     </form>

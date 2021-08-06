@@ -1,6 +1,6 @@
 export class UserLogged{
     id?: number;
-    userType: string = "";
+    userType?: string = "";
 
     firstName?: string = "";
     lastName?: string = "";
@@ -9,14 +9,15 @@ export class UserLogged{
     gender?: string = "";
 
     clinicName?: string = "";
-    authorizationCode?: string = "";
+    clinicImage?: string = "https://source.unsplash.com/random/?doctor";
+    codeAuthorization?: string = "";
 
-    streetAddress: string = "";
-    numberAddress: string = "";
-    city: string = "";
-    postalCode: string = "";
-    phone: string = "";
-    email: string = "";
-    password: string = "";
+    streetAddress?: string = "";
+    numberAddress?: string = "";
+    city?: string = "";
+    postalCode?: string = "";
+    phone?: string = "";
+    email?: string = "";
+    password?: string = "";
 }
 

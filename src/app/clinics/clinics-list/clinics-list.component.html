@@ -1,0 +1,22 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Book appointment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let clinic of clinicService.allClinics">
+            <td><a routerLink="/clinics/{{clinic.id}}">{{ clinic.clinicName }}</a></td>
+            <td>{{ clinic.phone }}</td>
+            <td>{{ clinic.email }}</td>
+            <td>{{ clinic.city }}, {{ clinic.streetAddress }}, {{ clinic.numberAddress }}, {{ clinic.postalCode }}</td>
+            <td><button (click)="this.appointmentService.openBookAppointmentServ(clinic)"> + </button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

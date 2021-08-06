@@ -8,7 +8,10 @@ import {LoginService} from '../../services/login.service';
 })
 export class TopNavComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService) {
+  }
 
   ngOnInit(): void {}
+
+
 }

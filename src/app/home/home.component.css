@@ -1,0 +1,7 @@
+ul li:first-letter {
+    text-transform: uppercase;
+}
+
+.list-title {
+    background-color: rgb(2,142,207);
+}

@@ -1,7 +1,12 @@
 <app-top-nav></app-top-nav>
 <app-aside-nav></app-aside-nav>
 
-<div class="content">
+<div class="content min-vh-100 d-flex justify-content-center align-items-center my-5 my-lg-0 my-md-0 my-sm-5 py-5 px-3"
+     [ngClass]="{'my-aside-margin': loginService.userLogged}">
     <router-outlet></router-outlet>
 </div>
+
+<app-footer></app-footer>
+
+
 

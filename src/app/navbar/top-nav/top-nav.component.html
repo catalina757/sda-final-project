@@ -1,26 +1,49 @@
-<nav>
-    <h1>MedApp</h1>
+<nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'my-aside-margin' : loginService.userLogged}" id="my-top-nav">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerTop"
+                aria-controls="navbarTogglerTop" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="top-nav-links">
-        <ng-container *ngIf="!loginService.userLogged else isLogged">
-            <a routerLink="home">Home</a>
-            <a routerLink="login">Login</a>
-            <a routerLink="register">Register</a>
-        </ng-container>
+        <a class="navbar-brand" href="#">
+            <img src="./assets/images/logo-med-app.png" style="width: 12%">
+            MedApp
+        </a>
 
-        <ng-template #isLogged>
-            <div  class="user" *ngIf="loginService.userLogged.userType === 'clinic'">
-                {{loginService.userLogged.clinicName}}
-            </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerTop">
+            <ng-container *ngIf="!loginService.userLogged else isLogged">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/register">Register</a>
+                    </li>
+                </ul>
+            </ng-container>
 
-            <div class="user" *ngIf="loginService.userLogged.userType === 'patient'">
-                <img src="/assets/images/user-female-avatar-woman.png" alt="image">
-                <p>{{loginService.userLogged.firstName}} {{loginService.userLogged.lastName}}</p>
-            </div>
+            <ng-template #isLogged>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'clinic'">
+                    <li class="nav-item">
+                        {{loginService.userLogged.clinicName}}
+                    </li>
+                </ul>
 
-            <button type="button" (click)="loginService.logout()">Logout</button>
-        </ng-template>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'patient'">
+                    <li class="nav-item">
+                        <img class="rounded-circle bg-secondary" src="./assets/images/user-female-avatar-woman.png" alt="image" style="height: 2rem; width: 2rem">
+                    </li>
+                    <li class="nav-item">
+                        {{loginService.userLogged.firstName}} {{loginService.userLogged.lastName}}
+                    </li>
+                </ul>
+
+                <button type="button" (click)="loginService.logout()">Logout</button>
+            </ng-template>
+        </div>
+
     </div>
 </nav>
-
-

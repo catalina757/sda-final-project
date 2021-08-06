@@ -41,10 +41,10 @@ export class AppointmentService {
   }
 
   public openBookAppointmentServ(clinicSelected: ClinicModel) {
-    this.router.navigate(['/dashboard/book-appointment'])
-        .then(() => {
+    this.router.navigate(['book-appointment']).then(() => {
           this.clinicService.clinic = clinicSelected;
           return this.clinicService.clinic;
-        });
+    });
   }
+
 }
