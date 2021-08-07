@@ -19,6 +19,7 @@ export class AppointmentBookComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   get allAppointments(): AppointmentModel[] {

@@ -10,3 +10,7 @@
     td:nth-of-type(5):before { content: "Actions: "; font-weight: bold; }
 
 }
+
+.my-search::placeholder {
+    font-size: 30px;
+}

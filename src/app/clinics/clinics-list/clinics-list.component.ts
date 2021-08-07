@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ClinicService} from '../../services/clinic.service';
 import {AppointmentService} from '../../services/appointment.service';
 import {ClinicModel} from '../../models/clinic.model';
+import {SearchService} from '../../services/search.service';
 
 @Component({
   selector: 'app-clinics-list',
@@ -12,7 +13,8 @@ export class ClinicsListComponent implements OnInit {
   public currentSearchTerm: string = "";
 
   constructor(public clinicService: ClinicService,
-              public appointmentService: AppointmentService) { }
+              public appointmentService: AppointmentService,
+              public searchService: SearchService) { }
 
   ngOnInit(): void {
     this.loadClinics("");
@@ -31,6 +33,8 @@ export class ClinicsListComponent implements OnInit {
   }
 
   loadClinics(search: string) {
+    this.searchService.searchBy(this.searchService.searchByClinicName);
+
     if (search === "") {
       this.clinicService.getClinicsServ().subscribe((allClinics: ClinicModel[]) => {
         this.clinicService.allClinics = allClinics;

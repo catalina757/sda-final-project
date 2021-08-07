@@ -1,6 +1,7 @@
 <div class="appointment-page">
     <form class="appointment-form" (ngSubmit)="onSubmit(appointmentForm)" #appointmentForm="ngForm">
-        <h1 class="title"> Book appointment to {{clinicService.clinic.clinicName}}</h1>
+        <h1 class="title"> Book appointment to <input class="text-center bg-transparent border-0" [value]="clinicService.clinic.clinicName"
+                                                      [ngModel] = "clinicService.clinic.clinicName" name="clinicName"></h1>
 
         <div class="user-name-code">
             <div>

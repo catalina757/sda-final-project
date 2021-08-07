@@ -27,7 +27,6 @@ export class PatientsComponent implements OnInit {
       this.appointmentService.allAppointments = allAppointments;
 
       for(let appointment of this.appointmentService.allAppointments) {
-
         if (this.loginService.userLogged.id === appointment.clinicId) {
           this.myPatientsId.push(appointment.patientId);
         }

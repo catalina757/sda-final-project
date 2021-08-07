@@ -1,3 +1,7 @@
+<div class="my-search w-100">
+    <app-search (newSearchEvent)="filterAppointments($event)"></app-search>
+</div>
+
 <div>
     <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
         <div>
@@ -17,7 +21,7 @@
                 </thead>
                 <tbody *ngFor="let appointment of appointmentService.allAppointments">
                     <tr  *ngIf="appointment.patientId === loginService.userLogged.id">
-                        <td>{{ appointment.clinicId }}</td>
+                        <td>{{ appointment.clinicName }}</td>
                         <td>{{ appointment.date }}</td>
                         <td>{{ appointment.time }}</td>
                         <td>{{ appointment.specialty }}</td>

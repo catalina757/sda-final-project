@@ -8,7 +8,7 @@ body {
     margin-left: 20%;
 }
 
-app-clinics {
+app-clinics, app-appointment-list {
     max-width: 100%;
     min-width: 80%;
 }

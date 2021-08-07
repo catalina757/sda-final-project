@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  // clinicsUrl: string = 'http://localhost:3000/clinics';
+  public searchByClinicName: string = "Search by clinic name";
+  public searchBySpecialty: string = "Search by specialty";
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  // getClinics(): Observable<ClinicModel[]> {
-  //   return this.http.get<ClinicModel[]>(this.clinicsUrl);
-  // }
-
+  public searchBy(byItem: string) {
+    let element = document.getElementById('search');
+    element!.removeAttribute("placeholder");
+    element!.setAttribute("placeholder", byItem);
+  }
 
 }
