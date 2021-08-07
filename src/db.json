@@ -265,21 +265,6 @@
       "gender": "female",
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
-      "specialty": "Dermatology",
-      "date": "2021-08-12",
-      "time": "12:30",
-      "id": 15
-    },
-    {
-      "clinicId": 1,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
       "specialty": "Allergology",
       "date": "2021-08-19",
       "time": "10:45",
@@ -374,6 +359,21 @@
       "date": "2021-08-14",
       "time": "16:15",
       "id": 22
+    },
+    {
+      "clinicId": 3,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Allergology",
+      "date": "2021-08-07",
+      "time": "12:30",
+      "id": 23
     }
   ]
 }

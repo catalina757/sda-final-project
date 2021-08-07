@@ -1,20 +1,13 @@
 #sidebar {
     background-color: rgb(235, 250, 242);
-    width: 20%;
-    /*position:absolute;*/
-    /*top:0;*/
-    /*left:0;*/
-    /*height:100%;*/
-    /*transition:all 300ms linear;*/
+    max-width: 200px;
+    min-width: 20%;
+    z-index: 1;
 }
 
-/*#sidebar.hidden-aside-nav {*/
-/*    left:-20%;*/
-/*}*/
-
 .toggle-btn {
-    position:absolute;
-    left:220px;
+    position:fixed;
+    left:13px;
     top:100px;
 }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppointmentService} from '../../services/appointment.service';
 import {AppointmentModel} from '../../models/appointment.model';
 import {LoginService} from '../../services/login.service';
+import {ClinicService} from '../../services/clinic.service';
 
 @Component({
   selector: 'app-appointment-list',
@@ -11,7 +12,8 @@ import {LoginService} from '../../services/login.service';
 export class AppointmentListComponent implements OnInit {
 
   constructor(public appointmentService: AppointmentService,
-              public loginService: LoginService) { }
+              public loginService: LoginService,
+              public clinicService: ClinicService) { }
 
   ngOnInit(): void {
     this.appointmentService.getAppointmentsServ().subscribe((allAppointments: AppointmentModel[]) => {
