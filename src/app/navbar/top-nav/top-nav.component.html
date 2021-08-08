@@ -33,8 +33,8 @@
                     </li>
                 </ul>
 
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'patient'">
-                    <li class="nav-item">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center" *ngIf="loginService.userLogged.userType === 'patient'">
+                    <li class="nav-item mx-2">
                         <img class="rounded-circle bg-secondary" src="./assets/images/user-female-avatar-woman.png" alt="image" style="height: 2rem; width: 2rem">
                     </li>
                     <li class="nav-item">
@@ -42,7 +42,7 @@
                     </li>
                 </ul>
 
-                <button type="button" (click)="loginService.logout()">Logout</button>
+                <button class="btn btn-outline-danger mx-5" type="button" (click)="loginService.logout()">Logout</button>
             </ng-template>
         </div>
 

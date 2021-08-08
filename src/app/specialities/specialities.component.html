@@ -1,33 +1,31 @@
-<p>medical-specialities works!</p>
+<div class="d-flex justify-content-center">
+    <div class="w-100">
+        <h2 class="text-center my-5">Medical specialities:</h2>
 
-<h2>Medical specialities:</h2>
+        <button class="btn btn-outline-primary mb-5" id="openModal" (click)="modalService.openModal()">Create new</button>
 
-<button id="openModal" (click)="modalService.openModal()">Create new</button>
+        <app-modal [modalOpenMessage]="modalService.modalOpened" *ngIf="modalService.modalOpened"></app-modal>
 
-<app-modal [modalOpenMessage]="modalService.modalOpened" *ngIf="modalService.modalOpened"></app-modal>
-
-<label for="search">Search</label>
-<input type="text" id="search" name="search" placeholder="Search">
-
-<table>
-    <tr>
-        <th>Specialty</th>
-        <th>Description</th>
-        <th>Doctors</th>
-        <th>Actions</th>
-    </tr>
-    <ng-container *ngIf="clinicService.hasSpecialitiesServ(clinicService.clinic)">
-        <ng-container *ngFor="let specialty of clinicService.clinic.specialities">
-            <tr>
-                <td>{{specialty.name}}</td>
-                <td>{{specialty.description}}</td>
-                <td><button>See doctors</button></td>
-                <td><button type="button">Edit</button><button type="button">Delete</button></td>
-            </tr>
-        </ng-container>
-    </ng-container>
-
-<!--    clinica vede tot; pacientul vede primele 3 coloane - adica fara actions-->
-<!--    in model clinica - relatii clinica-pacient => adaug proprietate: pacienti [] cu {fiecare pacient al clinicii cu detalii}-->
-
-</table>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <tr class="text-center">
+                    <th>Specialty</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                <ng-container *ngIf="clinicService.hasSpecialitiesServ(clinicService.clinic)">
+                    <ng-container *ngFor="let specialty of clinicService.clinic.specialities">
+                        <tr class="text-center">
+                            <td>{{specialty.name}}</td>
+                            <td>{{specialty.description}}</td>
+                            <td>
+                                <button class="btn btn-outline-info px-4 me-2" type="button" (click)="modalService.openModal()">Edit</button>
+                                <button class="btn btn-outline-warning ms-2" type="button" (click)="deleteSpecialtyFromClinic(specialty.name!)">Delete</button>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </table>
+        </div>
+    </div>
+</div>

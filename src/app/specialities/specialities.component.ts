@@ -19,9 +19,21 @@ export class SpecialitiesComponent implements OnInit {
 
 
   ngOnInit() {
-    this.clinicService. getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic: ClinicModel) => {
+    this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic: ClinicModel) => {
       this.clinicService.clinic = clinic;
     })
+  }
+
+  deleteSpecialtyFromClinic(name: string) {
+    if (this.clinicService.clinic.specialities != undefined) {
+      this.clinicService.clinic.specialities.forEach((specialty, index) => {
+        if (specialty.name === name && this.clinicService.clinic.specialities != undefined) {
+          this.clinicService.clinic.specialities.splice(index, 1)
+        }
+      });
+    }
+
+    this.clinicService.updateClinicServ(this.clinicService.clinic).subscribe();
   }
 
 }

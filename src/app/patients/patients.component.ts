@@ -21,10 +21,13 @@ export class PatientsComponent implements OnInit {
   ngOnInit(): void {
     this.patientService.getPatientsServ().subscribe((allPatients: PatientModel[]) => {
       this.patientService.allPatients = allPatients;
+      console.log(allPatients);
     });
 
     this.appointmentService.getAppointmentsServ().subscribe((allAppointments: AppointmentModel[]) => {
       this.appointmentService.allAppointments = allAppointments;
+
+      console.log(allAppointments);
 
       for(let appointment of this.appointmentService.allAppointments) {
         if (this.loginService.userLogged.id === appointment.clinicId) {

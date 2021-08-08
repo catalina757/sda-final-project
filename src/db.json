@@ -302,6 +302,38 @@
       "date": "2021-08-08",
       "time": "01:53",
       "id": 26
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Pneumology",
+      "date": "2021-08-08",
+      "time": "03:13",
+      "id": 27
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-08-04",
+      "time": "04:14",
+      "id": 28
     }
   ]
 }
