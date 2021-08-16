@@ -15,7 +15,6 @@ export class ModalService {
 
   closeModal() {
     this.modalOpened = false;
-  //  reset form!
   }
 
 }

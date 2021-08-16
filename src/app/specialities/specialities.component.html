@@ -1,6 +1,10 @@
 <div class="d-flex justify-content-center">
     <div class="w-100">
-        <h2 class="text-center my-5">Medical specialities:</h2>
+        <h2 class="text-center my-5">Medical specialities</h2>
+
+        <div class="my-search w-100">
+            <app-search (newSearchEvent)="filterSpecialities($event)"></app-search>
+        </div>
 
         <button class="btn btn-outline-primary mb-5" id="openModal" (click)="modalService.openModal()">Create new</button>
 
@@ -8,13 +12,15 @@
 
         <div class="table-responsive">
             <table class="table table-hover">
-                <tr class="text-center">
-                    <th>Specialty</th>
-                    <th>Description</th>
-                    <th>Actions</th>
-                </tr>
+                <thead>
+                    <tr class="text-center">
+                        <th>Specialty</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
                 <ng-container *ngIf="clinicService.hasSpecialitiesServ(clinicService.clinic)">
-                    <ng-container *ngFor="let specialty of clinicService.clinic.specialities">
+                    <tbody *ngFor="let specialty of clinicService.clinic.specialities">
                         <tr class="text-center">
                             <td>{{specialty.name}}</td>
                             <td>{{specialty.description}}</td>
@@ -23,7 +29,7 @@
                                 <button class="btn btn-outline-warning ms-2" type="button" (click)="deleteSpecialtyFromClinic(specialty.name!)">Delete</button>
                             </td>
                         </tr>
-                    </ng-container>
+                    </tbody>
                 </ng-container>
             </table>
         </div>

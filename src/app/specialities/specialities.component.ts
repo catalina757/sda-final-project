@@ -3,6 +3,7 @@ import {ModalService} from '../services/modal.service';
 import {ClinicService} from '../services/clinic.service';
 import {LoginService} from '../services/login.service';
 import {ClinicModel} from '../models/clinic.model';
+import {SearchService} from '../services/search.service';
 
 
 @Component({
@@ -15,13 +16,30 @@ export class SpecialitiesComponent implements OnInit {
 
   constructor(public modalService: ModalService,
               public clinicService: ClinicService,
-              private loginService: LoginService) {}
+              public loginService: LoginService,
+              public searchService: SearchService) {}
 
 
   ngOnInit() {
+    this.loadSpecialities("");
+  }
+
+  public searchSpecialitiesByInput(input: string) {
+    this.searchService.currentSearchTerm = input;
+    return this.searchService.currentSearchTerm
+        ? this.clinicService.clinic.specialities!.filter(s => s.name!.toLowerCase().indexOf(this.searchService.currentSearchTerm.toLowerCase()) != -1)
+        : this.clinicService.clinic.specialities;
+  }
+
+  public filterSpecialities(input: string) {
+    this.clinicService.clinic.specialities = this.searchSpecialitiesByInput(input);
+  }
+
+  loadSpecialities(search: string) {
+    this.searchService.searchBy(this.searchService.searchBySpecialty);
     this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic: ClinicModel) => {
       this.clinicService.clinic = clinic;
-    })
+    });
   }
 
   deleteSpecialtyFromClinic(name: string) {
@@ -32,10 +50,6 @@ export class SpecialitiesComponent implements OnInit {
         }
       });
     }
-
     this.clinicService.updateClinicServ(this.clinicService.clinic).subscribe();
   }
-
 }
-
-

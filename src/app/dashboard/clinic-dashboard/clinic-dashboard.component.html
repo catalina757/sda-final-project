@@ -1,7 +1,28 @@
-<p>clinic-dashboard works!</p>
+<div class="w-100 d-flex flex-column justify-content-center">
+<!--    <div class="vertical-chart my-5">-->
+<!--        <ngx-charts-bar-vertical-->
+<!--                [results]="chart"-->
+<!--                [xAxisLabel]="'Category'"-->
+<!--                [legendTitle]="'Chart Legend'"-->
+<!--                [yAxisLabel]="'Number'"-->
+<!--                [legend]="true"-->
+<!--                [legendPosition]="legendPosition"-->
+<!--                [showXAxisLabel]="true"-->
+<!--                [showYAxisLabel]="true"-->
+<!--                [xAxis]="true"-->
+<!--                [yAxis]="true"-->
+<!--                [barPadding]="30"-->
+<!--                [gradient]="true">-->
+<!--        </ngx-charts-bar-vertical>-->
+<!--    </div>-->
 
-<p>grafice/statistici</p>
-<p>despre aceasta clinica</p>
-
-
-
+    <div class="pie-chart my-5">
+        <ngx-charts-pie-chart
+                [results]="chart"
+                [legend]="true"
+                [legendTitle]="'Pie Chart Legend'"
+                [legendPosition]="legendPosition"
+                [labels]="true" >
+        </ngx-charts-pie-chart>
+    </div>
+</div>

@@ -1,23 +1,33 @@
- <table>
-    <thead>
-        <tr style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center; grid-column-gap: 25px">
-            <th>Name</th>
-            <th>Id</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let patient of patientService.allPatients"
-            style="display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center; grid-column-gap: 25px">
-            <ng-container *ngIf="myPatientsId.includes(patient.id!) ">
-                <td>{{ patient.firstName }} {{ patient.lastName }}</td>
-                <td>{{ patient.id }}</td>
-                <td>{{ patient.phone }}</td>
-                <td>{{ patient.email }}</td>
-                <td><button>Click</button></td>
-            </ng-container>
-        </tr>
-    </tbody>
- </table>
+<div>
+    <h2 class="text-center my-5">Patients</h2>
+
+    <div class="my-search w-100">
+        <app-search (newSearchEvent)="filterPatients($event)"></app-search>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr  class="text-center">
+                    <th>Name</th>
+                    <th>CNP</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <!--            <th>Actions</th>-->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patientService.allPatients" class="text-center">
+                    <ng-container *ngIf="myPatientsId.includes(patient.id!) ">
+                        <td>{{ patient.firstName }} {{ patient.lastName }}</td>
+                        <td>{{ patient.cnp }}</td>
+                        <td>{{ patient.phone }}</td>
+                        <td>{{ patient.email }}</td>
+                        <!--                <td><button class="btn btn-outline-info px-4 me-2">Click</button></td>-->
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</div>
+

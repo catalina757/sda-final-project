@@ -68,7 +68,8 @@ export class RegisterComponent implements OnInit {
             }
 
             if (!existEmail) {
-                this.patientService.createPatientServ(form.value).subscribe((newPatient: PatientModel) => {
+                this.patientService.createPatientServ(form.value)
+                    .subscribe((newPatient: PatientModel) => {
                     this.allPatients.push(newPatient);
                 });
                 this.router.navigate(['login']);

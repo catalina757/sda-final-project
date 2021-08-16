@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ClinicModel} from '../../models/clinic.model';
 import {ClinicService} from '../../services/clinic.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-clinic-details',
@@ -13,8 +13,7 @@ export class ClinicDetailsComponent implements OnInit {
   public id!: number;
 
   constructor(public clinicService: ClinicService,
-              private route: ActivatedRoute,
-              private router: Router) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -23,10 +22,6 @@ export class ClinicDetailsComponent implements OnInit {
       this.selectedClinic = clinic;
       console.log(this.selectedClinic.clinicName);
       console.log(this.selectedClinic.specialities);
-      // if(this.clinicService.hasSpecialitiesServ(this.selectedClinic)) {
-      //   console.log(this.selectedClinic.specialities);
-      // }
     });
-
   }
 }

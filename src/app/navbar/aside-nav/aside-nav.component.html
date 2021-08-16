@@ -1,21 +1,26 @@
-<nav id="sidebar" class="position-fixed navbar navbar-expand-lg navbar-light min-vh-100" *ngIf="loginService.userLogged"
+<nav id="sidebar" class="position-fixed navbar
+     navbar-expand-lg navbar-light min-vh-100"
+     *ngIf="loginService.userLogged"
      [ngClass]="{'hidden-aside-nav': isMobile}">
     <div class="container-fluid">
-        <button class="navbar-toggler toggle-btn" id="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerAside"
-                aria-controls="navbarTogglerAside" aria-expanded="false" aria-label="Toggle navigation"
+        <button class="navbar-toggler toggle-btn" id="collapsed"
+                type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerAside"
+                aria-controls="navbarTogglerAside"
+                aria-expanded="false" aria-label="Toggle navigation"
                 (click)="clickToggleButton()">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerAside">
+        <div class="collapse navbar-collapse"
+             id="navbarTogglerAside">
             <ul class="navbar-nav flex-column mx-auto">
                 <li class="nav-item"><a class="nav-link" routerLink="/dashboard">Dashboard</a></li>
 
                 <ng-container *ngIf="loginService.userLogged.userType === 'clinic'">
-                    <li class=""><a routerLink="/appointments">Appointments</a></li>
-                    <li class=""><a routerLink="/specialities">Specialities</a></li>
-                    <li class=""><a>Doctors</a></li>
-                    <li class=""><a routerLink="/patients">Patients</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/appointments">Appointments</a></li>
+                    <li class="nav-item"><a class="nav-link active" routerLink="/specialities">Specialities</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/patients">Patients</a></li>
                 </ng-container>
 
                 <ng-container *ngIf="loginService.userLogged.userType === 'patient'">

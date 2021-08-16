@@ -188,7 +188,8 @@
             </div>
 
             <label class="ps-2" for="password">Password: </label>
-            <input id="password" type="password" name="password" placeholder="Password" [(ngModel)]="passwordModel.password" required minlength="6" #password="ngModel">
+            <input id="password" type="password" name="password" placeholder="Password"
+                   [(ngModel)]="passwordModel.password" required minlength="6" #password="ngModel">
             <div *ngIf="!password.valid && password.touched">
                 <div *ngIf="password.errors?.required">
                     Password is required.
@@ -199,7 +200,9 @@
             </div>
 
             <label class="ps-2" for="confirmPassword">Confirm Password: </label>
-            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="passwordModel.confirmPassword" required ngValidateEqual = "password" #confirmPassword="ngModel">
+            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password"
+                   [(ngModel)]="passwordModel.confirmPassword" required
+                   ngValidateEqual = "password" #confirmPassword="ngModel">
             <div *ngIf="!confirmPassword.valid && confirmPassword.touched">
                 <div *ngIf="confirmPassword.errors?.required">
                     Confirm password is required.

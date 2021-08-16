@@ -24,6 +24,9 @@ import { ClinicDetailsComponent } from './clinics/clinic-details/clinic-details.
 import { ClinicsListComponent } from './clinics/clinics-list/clinics-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { SearchComponent } from './search/search.component';
     ClinicsListComponent,
     FooterComponent,
     SearchComponent,
+
   ],
     imports: [
         BrowserModule,
@@ -57,6 +61,8 @@ import { SearchComponent } from './search/search.component';
         // for localStorage:
         NgxWebstorageModule.forRoot(),
         ReactiveFormsModule,
+        NgxChartsModule,
+        BrowserAnimationsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

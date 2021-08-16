@@ -1,9 +1,9 @@
 <div class="dashboard-page">
-    <div *ngIf="loginService.userLogged.userType === 'patient'">
+    <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
         <app-patient-dashboard></app-patient-dashboard>
-    </div>
+    </ng-container>
 <!--OR-->
-    <div *ngIf="loginService.userLogged.userType === 'clinic'">
+    <ng-container *ngIf="loginService.userLogged.userType === 'clinic'">
         <app-clinic-dashboard></app-clinic-dashboard>
-    </div>
+    </ng-container>
 </div>

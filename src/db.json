@@ -50,6 +50,23 @@
       "birthday": "2000-07-09",
       "gender": "female",
       "id": 3
+    },
+    {
+      "userType": "patient",
+      "streetAddress": "Drumul Mare nr.118A",
+      "numberAddress": "33",
+      "city": "Clinceni",
+      "postalCode": 77025,
+      "phone": 774599557,
+      "email": "koandy19831234@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "Andrei",
+      "lastName": "Andrei",
+      "cnp": 1901203234567,
+      "birthday": "2021-08-07",
+      "gender": "male",
+      "id": 4
     }
   ],
   "clinics": [
@@ -170,6 +187,10 @@
         {
           "name": "Allergology",
           "description": "Allergology"
+        },
+        {
+          "name": "Surgery",
+          "description": "Surgery"
         }
       ]
     },
@@ -196,6 +217,7 @@
   ],
   "appointments": [
     {
+      "clinicName": "Regina Maria",
       "clinicId": 3,
       "patientId": 2,
       "firstName": "Camelia",
@@ -211,6 +233,7 @@
       "id": 12
     },
     {
+      "clinicName": "Regina Maria",
       "clinicId": 3,
       "patientId": 2,
       "firstName": "Camelia",
@@ -226,6 +249,7 @@
       "id": 13
     },
     {
+      "clinicName": "Sanador",
       "clinicId": 2,
       "patientId": 3,
       "firstName": "Ioana",
@@ -241,6 +265,7 @@
       "id": 21
     },
     {
+      "clinicName": "Sanador",
       "clinicId": 2,
       "patientId": 2,
       "firstName": "Camelia",
@@ -334,6 +359,70 @@
       "date": "2021-08-04",
       "time": "04:14",
       "id": 28
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 3,
+      "firstName": "Ioana",
+      "lastName": "Popescu",
+      "cnp": 2810304123456,
+      "birthday": "2000-07-09",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "ioana@ymail.com",
+      "specialty": "Pneumology",
+      "date": "2021-07-31",
+      "time": "18:16",
+      "id": 29
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 2,
+      "firstName": "Camelia",
+      "lastName": "Dragomir",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "camelia@yaho.com",
+      "specialty": "Cardiology",
+      "date": "2021-07-31",
+      "time": "18:16",
+      "id": 30
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 3,
+      "firstName": "Ioana",
+      "lastName": "Popescu",
+      "cnp": 2810304123456,
+      "birthday": "2000-07-09",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "ioana@ymail.com",
+      "specialty": "Radiology",
+      "date": "2021-08-05",
+      "time": "08:15",
+      "id": 31
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 2,
+      "firstName": "Camelia",
+      "lastName": "Dragomir",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "camelia@yaho.com",
+      "specialty": "Pneumology",
+      "date": "2021-08-07",
+      "time": "14:43",
+      "id": 32
     }
   ]
 }

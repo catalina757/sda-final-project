@@ -8,7 +8,7 @@ body {
     margin-left: 20%;
 }
 
-app-clinics, app-appointment-list, app-specialities {
+app-clinics, app-appointment-list, app-specialities, app-patients, app-dashboard, app-clinic-dashboard, app-patient-dashboard {
     max-width: 100%;
     min-width: 80%;
 }

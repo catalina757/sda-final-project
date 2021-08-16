@@ -8,3 +8,4 @@ export class AppointmentModel extends UserLogged{
     clinicId!: number;
     patientId!: number;
 }
+

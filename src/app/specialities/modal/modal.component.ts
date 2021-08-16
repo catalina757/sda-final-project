@@ -14,11 +14,10 @@ export class ModalComponent implements OnInit {
   @Input() modalOpenMessage: boolean = false;
 
   constructor(private loginService: LoginService,
-              private clinicService: ClinicService,
+              public clinicService: ClinicService,
               public modalService: ModalService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onCreate(form: NgForm) {
     this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic:ClinicModel) => {

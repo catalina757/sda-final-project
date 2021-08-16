@@ -1,7 +1,7 @@
 <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light"
      [ngClass]="{'my-aside-margin' : loginService.userLogged}" id="my-top-nav" style="height: 76px">
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerTop"
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerTop"
                 aria-controls="navbarTogglerTop" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,17 +11,17 @@
             MedApp
         </a>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerTop">
+        <div class="collapse navbar-collapse mt-3" id="navbarTogglerTop">
             <ng-container *ngIf="!loginService.userLogged else isLogged">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/home">Home</a>
+                        <a class="nav-link px-3 ms-1 active" routerLink="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/login">Login</a>
+                        <a class="nav-link px-3 ms-1" routerLink="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/register">Register</a>
+                        <a class="nav-link px-3 ms-1" routerLink="/register">Register</a>
                     </li>
                 </ul>
             </ng-container>

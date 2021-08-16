@@ -30,10 +30,10 @@
         <ng-container *ngFor="let specialty of selectedClinic.specialities">
             <div class="col">
                 <div class="card">
-                    <img src="https://source.unsplash.com/random/?clinic,doctor" class="card-img-top" alt="image for specialities from unsplash.com">
+                    <img src="https://source.unsplash.com/random/?doctor" class="card-img-top img-fluid" style="max-width: 100%; height: auto; margin: auto" alt="image for specialities from unsplash.com">
                     <div class="card-body">
-                        <h5 class="card-title">{{specialty.name}}</h5>
-                        <p class="card-text">{{specialty.description}}</p>
+                        <h5 class="card-title text-center">{{specialty.name}}</h5>
+                        <p class="card-text text-center">{{specialty.description}}</p>
                     </div>
                 </div>
             </div>

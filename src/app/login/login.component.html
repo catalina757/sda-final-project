@@ -16,7 +16,8 @@
 
         <div class="credentials">
             <label class="ps-1" for="email">Email: </label>
-            <input id="email" type="email" name="email" placeholder="example email: me@site.com" ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel">
+            <input id="email" type="email" name="email" placeholder="example email: me@site.com"
+                   ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel">
             <div *ngIf="!email.valid && email.touched">
                 <div class="text-danger" *ngIf="email.errors?.required">
                     Email is required.
@@ -27,7 +28,8 @@
             </div>
 
             <label class="ps-1" for="password">Password: </label>
-            <input id="password" type="password" name="password" placeholder="password: at least 6 characters long" ngModel required minlength="6" #password="ngModel">
+            <input id="password" type="password" name="password" placeholder="password: at least 6 characters long"
+                   ngModel required minlength="6" #password="ngModel">
             <div *ngIf="!password.valid && password.touched">
                 <div class="text-danger" *ngIf="password.errors?.required">
                     Password is required.

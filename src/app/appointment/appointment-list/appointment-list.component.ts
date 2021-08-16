@@ -11,7 +11,6 @@ import {SearchService} from '../../services/search.service';
   styleUrls: ['./appointment-list.component.css']
 })
 export class AppointmentListComponent implements OnInit {
-  public currentSearchTerm: string = "";
 
   constructor(public appointmentService: AppointmentService,
               public loginService: LoginService,
@@ -22,34 +21,53 @@ export class AppointmentListComponent implements OnInit {
     this.loadAppointments("");
   }
 
+  public searchAppointmentOfPatient(input: string) {
+    this.searchService.currentSearchTerm = input;
 
+    return this.searchService.currentSearchTerm
+        ? this.appointmentService.allAppointments.filter(s => s.clinicName!.toLowerCase().indexOf(this.searchService.currentSearchTerm.toLowerCase()) != -1)
+        : this.appointmentService.allAppointments;
+  }
 
-  public searchAppointmentByInput(input: string) {
-    this.currentSearchTerm = input;
-    return input ? this.appointmentService.allAppointments.filter(s => s.specialty.toLowerCase().indexOf(input.toLowerCase()) != -1)
+  public searchAppointmentOfClinic(input: string) {
+    this.searchService.currentSearchTerm = input;
+
+    return this.searchService.currentSearchTerm
+        ? this.appointmentService.allAppointments.filter(s => s.lastName!.toLowerCase().indexOf(this.searchService.currentSearchTerm.toLowerCase()) != -1)
         : this.appointmentService.allAppointments;
   }
 
   public filterAppointments(input: string) {
-    this.appointmentService.allAppointments = this.searchAppointmentByInput(input);
+    if (this.loginService.userLogged.userType === "patient") {
+      this.appointmentService.allAppointments = this.searchAppointmentOfPatient(input);
+    }
+
+    if (this.loginService.userLogged.userType === "clinic") {
+      this.appointmentService.allAppointments = this.searchAppointmentOfClinic(input);
+    }
   }
 
   loadAppointments(search: string) {
-    this.searchService.searchBy(this.searchService.searchBySpecialty);
+    if (this.loginService.userLogged.userType === "patient") {
+      this.searchService.searchBy(this.searchService.searchByClinicName);
+    } else if (this.loginService.userLogged.userType === "clinic") {
+      this.searchService.searchBy(this.searchService.searchByPatientName);
+    }
+
 
     if (search === "") {
       this.appointmentService.getAppointmentsServ().subscribe((allAppointments: AppointmentModel[]) => {
         this.appointmentService.allAppointments = allAppointments;
       })
     } else if (search != "") {
-      console.log(search);
       this.filterAppointments(search);
     }
   }
 
   deleteAppointment(appointment: AppointmentModel) {
     this.appointmentService.deleteAppointmentServ(appointment).subscribe(
-        () => (this.appointmentService.allAppointments = this.appointmentService.allAppointments.filter((a) => a.id !== appointment.id)))
+        () => (this.appointmentService.allAppointments = this.appointmentService.allAppointments
+            .filter((a) => a.id !== appointment.id)))
     return this.appointmentService.allAppointments;
   }
 

@@ -1,3 +1,5 @@
+<h2 class="text-center my-5">Clinics</h2>
+
 <div class="my-search w-100">
     <app-search (newSearchEvent)="filterClinics($event)"></app-search>
 </div>
@@ -5,16 +7,15 @@
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>
-        <tr class="text-center">
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Book appointment</th>
-        </tr>
+            <tr class="text-center">
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Book appointment</th>
+            </tr>
         </thead>
         <tbody>
-        <ng-container *ngIf="!currentSearchTerm else filteredList">
             <tr *ngFor="let clinic of clinicService.allClinics" class="text-center">
                 <td><a class="text-decoration-none" routerLink="/clinics/{{clinic.id}}">{{ clinic.clinicName }}</a></td>
                 <td>{{ clinic.phone }}</td>
@@ -22,17 +23,6 @@
                 <td>{{ clinic.city }}, {{ clinic.streetAddress }}, {{ clinic.numberAddress }}, {{ clinic.postalCode }}</td>
                 <td><button class="btn btn-outline-primary px-3" (click)="this.appointmentService.openBookAppointmentServ(clinic)"> + </button></td>
             </tr>
-        </ng-container>
-
-        <ng-template #filteredList>
-            <tr *ngFor="let clinic of clinicService.allClinics" class="text-center">
-                <td><a class="text-decoration-none" routerLink="/clinics/{{clinic.id}}">{{ clinic.clinicName }}</a></td>
-                <td>{{ clinic.phone }}</td>
-                <td>{{ clinic.email }}</td>
-                <td>{{ clinic.city }}, {{ clinic.streetAddress }}, {{ clinic.numberAddress }}, {{ clinic.postalCode }}</td>
-                <td><button class="btn btn-outline-primary px-3" (click)="this.appointmentService.openBookAppointmentServ(clinic)"> + </button></td>
-            </tr>
-        </ng-template>
         </tbody>
     </table>
 </div>

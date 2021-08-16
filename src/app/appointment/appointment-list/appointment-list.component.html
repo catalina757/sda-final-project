@@ -1,8 +1,10 @@
-<div class="my-search w-100">
-    <app-search (newSearchEvent)="filterAppointments($event)"></app-search>
-</div>
-
 <div>
+    <h2 class="text-center my-5">Appointments</h2>
+
+    <div class="my-search w-100">
+        <app-search (newSearchEvent)="filterAppointments($event)"></app-search>
+    </div>
+
     <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
         <div>
             <a class="text-decoration-none d-inline-block mb-5 w-100 text-end" routerLink="/clinics"> + Add appointment </a>
@@ -11,13 +13,13 @@
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
-                <tr class="text-center">
-                    <th>Clinic name</th>
-                    <th>Appointment date</th>
-                    <th>Appointment time</th>
-                    <th>Specialty</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr class="text-center">
+                        <th>Clinic name</th>
+                        <th>Appointment date</th>
+                        <th>Appointment time</th>
+                        <th>Specialty</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody *ngFor="let appointment of appointmentService.allAppointments">
                     <tr  *ngIf="appointment.patientId === loginService.userLogged.id" class="text-center">
@@ -39,14 +41,14 @@
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
-                <tr class="text-center">
-                    <th>Patient name</th>
-                    <th>CNP</th>
-                    <th>Appointment date</th>
-                    <th>Appointment time</th>
-                    <th>Specialty</th>
-                    <th>Actions</th>
-                </tr>
+                    <tr class="text-center">
+                        <th>Patient name</th>
+                        <th>CNP</th>
+                        <th>Appointment date</th>
+                        <th>Appointment time</th>
+                        <th>Specialty</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody *ngFor="let appointment of appointmentService.allAppointments">
                 <tr  *ngIf="appointment.clinicId === loginService.userLogged.id" class="text-center">
@@ -57,7 +59,8 @@
                     <td class="clinic-td">{{ appointment.specialty }}</td>
                     <td class="clinic-td">
                         <button class="btn btn-outline-info px-4 me-2">Edit</button>
-                        <button class="btn btn-outline-warning ms-2" (click)="deleteAppointment(appointment)">Delete</button>
+                        <button class="btn btn-outline-warning ms-2"
+                                (click)="deleteAppointment(appointment)">Delete</button>
                     </td>
                 </tr>
                 </tbody>

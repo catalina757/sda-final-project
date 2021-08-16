@@ -9,7 +9,7 @@ export class UserLogged{
     gender?: string = "";
 
     clinicName?: string = "";
-    clinicImage?: string = "https://source.unsplash.com/random/?doctor";
+    clinicImage?: string = "https://source.unsplash.com/random/?clinic";
     codeAuthorization?: string = "";
 
     streetAddress?: string = "";

@@ -10,7 +10,6 @@ import {SearchService} from '../../services/search.service';
   styleUrls: ['./clinics-list.component.css']
 })
 export class ClinicsListComponent implements OnInit {
-  public currentSearchTerm: string = "";
 
   constructor(public clinicService: ClinicService,
               public appointmentService: AppointmentService,
@@ -22,8 +21,10 @@ export class ClinicsListComponent implements OnInit {
 
   //filtrare input litere mari/mici in nume clinica
   public searchClinicByInput(input: string) {
-    this.currentSearchTerm = input;
-    return input ? this.clinicService.allClinics.filter(s => s.clinicName!.toLowerCase().indexOf(input.toLowerCase()) != -1)
+    this.searchService.currentSearchTerm = input;
+
+    return this.searchService.currentSearchTerm
+        ? this.clinicService.allClinics.filter(s => s.clinicName!.toLowerCase().indexOf(this.searchService.currentSearchTerm.toLowerCase()) != -1)
         : this.clinicService.allClinics;
   }
 

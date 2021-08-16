@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ClinicModel} from '../models/clinic.model';
+import {PatientModel} from '../models/patient.model';
 
 
 @Injectable({
@@ -36,6 +37,8 @@ export class ClinicService {
   {
     return typeof clinic !== 'undefined' && typeof clinic.specialities !== 'undefined';
   }
+
+
 }
 
 
