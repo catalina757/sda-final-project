@@ -15,26 +15,26 @@
             <ng-container *ngIf="!loginService.userLogged else isLogged">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link px-3 ms-1" [ngClass]="{'active': routerLink === '/home'}" routerLink="/home">Home</a>
+                        <a class="nav-link px-3 ms-1" routerLinkActive="active" routerLink="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 ms-1" [ngClass]="{'active': routerLink === '/login'}" routerLink="/login">Login</a>
+                        <a class="nav-link px-3 ms-1" routerLinkActive="active" routerLink="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 ms-1" [ngClass]="{'active': routerLink === '/register'}" routerLink="/register">Register</a>
+                        <a class="nav-link px-3 ms-1" routerLinkActive="active" routerLink="/register">Register</a>
                     </li>
                 </ul>
             </ng-container>
 
             <ng-template #isLogged>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'clinic'">
-                    <li class="nav-item">
+                <ul class="navbar-nav mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'clinic'">
+                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         {{loginService.userLogged.clinicName}}
                     </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center" *ngIf="loginService.userLogged.userType === 'patient'">
-                    <li class="nav-item mx-2">
+                    <li class="nav-item mx-2" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <img class="rounded-circle bg-secondary" src="./assets/images/user-female-avatar-woman.png" alt="image" style="height: 2rem; width: 2rem">
                     </li>
                     <li class="nav-item">
