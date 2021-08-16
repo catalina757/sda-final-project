@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../services/login.service';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-aside-nav',
@@ -8,8 +9,18 @@ import {LoginService} from '../../services/login.service';
 })
 export class AsideNavComponent implements OnInit {
   public isMobile: boolean = false;
+  public routerLink: string = "";
 
-  constructor(public loginService: LoginService) {
+  constructor(public loginService: LoginService,
+              public router: Router) {
+
+    this.router.events.subscribe((event: any) => {
+          if (event instanceof NavigationEnd) {
+            this.routerLink = this.router.url;
+            console.log(this.routerLink);
+          }
+        }
+    );
   }
 
   ngOnInit(): void {
@@ -25,7 +36,7 @@ export class AsideNavComponent implements OnInit {
     return w < breakpoint;
   }
 
-  clickToggleButton() {
+  clickToggleButton(): void {
     let sidebar = document.getElementById('sidebar');
     let collapsedButton = document.getElementById('collapsed');
 
