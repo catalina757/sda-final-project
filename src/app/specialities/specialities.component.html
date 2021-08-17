@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mb-5">
     <div class="w-100">
         <h2 class="text-center my-5">Medical specialities</h2>
 
@@ -6,7 +6,7 @@
             <app-search (newSearchEvent)="filterSpecialities($event)"></app-search>
         </div>
 
-        <button class="btn btn-outline-primary mb-5" id="openModal" (click)="modalService.openModal()">Create new</button>
+        <button class="btn btn-outline-primary mb-5" id="openModal" (click)="modalService.openModal('create')">Create new</button>
 
         <app-modal [modalOpenMessage]="modalService.modalOpened" *ngIf="modalService.modalOpened"></app-modal>
 
@@ -20,12 +20,12 @@
                     </tr>
                 </thead>
                 <ng-container *ngIf="clinicService.hasSpecialitiesServ(clinicService.clinic)">
-                    <tbody *ngFor="let specialty of clinicService.clinic.specialities">
+                    <tbody *ngFor="let specialty of clinicService.clinic.specialities, let specialtyIndex = index">
                         <tr class="text-center">
                             <td>{{specialty.name}}</td>
                             <td>{{specialty.description}}</td>
                             <td>
-                                <button class="btn btn-outline-info px-4 me-2" type="button" (click)="modalService.openModal()">Edit</button>
+                                <button class="btn btn-outline-info px-4 me-2" type="button" (click)="modalService.openModal('edit', specialtyIndex)">Edit</button>
                                 <button class="btn btn-outline-warning ms-2" type="button" (click)="deleteSpecialtyFromClinic(specialty.name!)">Delete</button>
                             </td>
                         </tr>

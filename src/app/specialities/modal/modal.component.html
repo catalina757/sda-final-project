@@ -1,12 +1,25 @@
 <div class="modal" id="modal">
-<!--    <div>aici form cu modificarea specializarii selectate</div>-->
+    <ng-container *ngIf="modalService.modifySpecialty else createSpecialty">
+        <form class="modal-content" (ngSubmit)="onEdit(modifySpecialtyForm)" #modifySpecialtyForm="ngForm">
 
-<!--    daca are parametru = true; altfel, daca parametru null = false-->
-<!--    <ng-container *ngIf="true else createSpecialty">-->
+            <label for="modifySpecialtyName">Modify specialty name:</label>
+            <input id="modifySpecialtyName"
+                   [value]="modalService.specialty.name"
+                   [ngModel]="modalService.specialty.name" name="name">
 
-<!--    </ng-container>-->
+            <label for="modifySpecialtyDescription">Modify specialty description:</label>
+            <input id="modifySpecialtyDescription"
+                   [value]="modalService.specialty.description"
+                   [ngModel]="modalService.specialty.description" name="description">
 
-<!--    <ng-template #createSpecialty>-->
+            <div class="buttons">
+                <input type="submit" value="Create" [disabled]="!modifySpecialtyForm.valid">
+                <input type="button" value="Close" (click)="modalService.closeModal()">
+            </div>
+        </form>
+    </ng-container>
+
+    <ng-template #createSpecialty>
         <form class="modal-content" (ngSubmit)="onCreate(specialtyForm)" #specialtyForm="ngForm">
             <label for="specialtyName">Specialty name:</label>
             <input id="specialtyName" type="text" name="name" placeholder="Specialty name" ngModel required minlength="3" #specialtyName="ngModel">
@@ -37,5 +50,5 @@
                 <input type="button" value="Close" (click)="modalService.closeModal()">
             </div>
         </form>
-<!--    </ng-template>-->
+    </ng-template>
 </div>

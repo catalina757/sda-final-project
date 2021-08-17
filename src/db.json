@@ -109,6 +109,14 @@
           "description": "Surgery"
         },
         {
+          "name": "Pediatrics",
+          "description": "Pediatrics"
+        },
+        {
+          "name": "Emergencies",
+          "description": "Emergencies"
+        },
+        {
           "name": "Orthopedic",
           "description": "orthopedic"
         }
@@ -165,8 +173,8 @@
           "description": "Allergology"
         },
         {
-          "name": "Surgery",
-          "description": "Surgery"
+          "name": "Orthopedic",
+          "description": "Orthopedic"
         }
       ]
     },
@@ -313,22 +321,6 @@
       "id": 25
     },
     {
-      "clinicName": "Regina Maria",
-      "clinicId": 3,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Surgery",
-      "date": "2021-08-08",
-      "time": "01:53",
-      "id": 26
-    },
-    {
       "clinicName": "Angisan Clinic",
       "clinicId": 1,
       "patientId": 1,
@@ -423,6 +415,22 @@
       "date": "2021-08-07",
       "time": "14:43",
       "id": 32
+    },
+    {
+      "clinicName": "Regina Maria",
+      "clinicId": 3,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Allergologyyyyy",
+      "date": "2021-08-07",
+      "time": "21:45",
+      "id": 33
     }
   ]
 }

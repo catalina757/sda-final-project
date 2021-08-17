@@ -12,6 +12,9 @@ import {NgForm} from '@angular/forms';
 })
 export class ModalComponent implements OnInit {
   @Input() modalOpenMessage: boolean = false;
+  @Input() public specialtyIndex: number = 0;
+
+
 
   constructor(private loginService: LoginService,
               public clinicService: ClinicService,
@@ -49,5 +52,15 @@ export class ModalComponent implements OnInit {
     });
   }
 
+  onEdit(form: NgForm) {
+    this.modalService.specialty = form.value;
+
+    this.clinicService.clinic.specialities![this.modalService.specialtyIndex!].name = this.modalService.specialty.name;
+    this.clinicService.clinic.specialities![this.modalService.specialtyIndex!].description = this.modalService.specialty.description;
+
+    this.clinicService.updateClinicServ(this.clinicService.clinic).subscribe();
+
+    this.modalService.closeModal();
+  }
 }
 

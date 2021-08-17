@@ -32,7 +32,6 @@ export class AppointmentBookComponent implements OnInit {
       this.allAppointments.push(newAppointment);
     });
 
-    this.router.navigate(['appointments'])
-        .then(() => console.log(this.allAppointments));
+    this.router.navigate(['appointments']);
   }
 }

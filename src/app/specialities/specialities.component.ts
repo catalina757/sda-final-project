@@ -4,6 +4,7 @@ import {ClinicService} from '../services/clinic.service';
 import {LoginService} from '../services/login.service';
 import {ClinicModel} from '../models/clinic.model';
 import {SearchService} from '../services/search.service';
+import {AppointmentService} from '../services/appointment.service';
 
 
 @Component({
@@ -17,11 +18,12 @@ export class SpecialitiesComponent implements OnInit {
   constructor(public modalService: ModalService,
               public clinicService: ClinicService,
               public loginService: LoginService,
-              public searchService: SearchService) {}
+              public searchService: SearchService,
+              public appointmentService: AppointmentService,) {}
 
 
   ngOnInit() {
-    this.loadSpecialities("");
+    this.loadSpecialities();
   }
 
   public searchSpecialitiesByInput(input: string) {
@@ -35,7 +37,7 @@ export class SpecialitiesComponent implements OnInit {
     this.clinicService.clinic.specialities = this.searchSpecialitiesByInput(input);
   }
 
-  loadSpecialities(search: string) {
+  loadSpecialities() {
     this.searchService.searchBy(this.searchService.searchBySpecialty);
     this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic: ClinicModel) => {
       this.clinicService.clinic = clinic;
