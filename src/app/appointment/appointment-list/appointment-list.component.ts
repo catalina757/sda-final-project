@@ -83,7 +83,6 @@ export class AppointmentListComponent implements OnInit {
 
     this.clinicService.getOneClinicServ(appointment.clinicId).subscribe((clinic: ClinicModel) => {
       this.clinicService.clinic = clinic;
-      console.log(this.clinicService.clinic.clinicName);
     });
 
     this.appointmentService.appointment = appointment;

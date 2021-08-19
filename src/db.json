@@ -373,7 +373,7 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Surgery",
-      "date": "2021-08-02",
+      "date": "2021-06-01",
       "time": "11:37"
     },
     {
@@ -391,6 +391,70 @@
       "specialty": "Orthopedic",
       "date": "2021-08-19",
       "time": "11:49"
+    },
+    {
+      "clinicName": "Medicover",
+      "id": 40,
+      "clinicId": 4,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Surgery",
+      "date": "2021-08-13",
+      "time": "20:22"
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Pediatrics",
+      "date": "2021-08-14",
+      "time": "21:29",
+      "id": 41
+    },
+    {
+      "clinicName": "Medsana",
+      "clinicId": 5,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Dermatology",
+      "date": "2021-08-08",
+      "time": "21:35",
+      "id": 42
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-08-14",
+      "time": "21:36",
+      "id": 43
     }
   ]
 }

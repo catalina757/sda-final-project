@@ -12,13 +12,16 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./appointment-book.component.css']
 })
 export class AppointmentBookComponent implements OnInit {
-
+  chooseSpecialty: string = "";
+;
   constructor(public clinicService: ClinicService,
               public loginService: LoginService,
               public appointmentService: AppointmentService,
               private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.chooseSpecialty = "Choose a specialty...";
+  }
 
   get allAppointments(): AppointmentModel[] {
     return this.appointmentService.allAppointments;
@@ -31,12 +34,6 @@ export class AppointmentBookComponent implements OnInit {
         .subscribe((newAppointment: AppointmentModel) => {
       this.allAppointments.push(newAppointment);
     });
-
-    this.router.navigate(['appointments']);
-  }
-
-  onEdit(form: NgForm) {
-    this.appointmentService.updateAppointmentServ(form.value).subscribe();
 
     this.router.navigate(['appointments']);
   }

@@ -1,1 +1,68 @@
-<app-appointment-book></app-appointment-book>
+<!--<app-appointment-book></app-appointment-book>-->
+
+<ng-container *ngIf="appointmentService.isEditAppointment && clinicService.clinic">
+    <div class="appointment-page">
+        <form class="appointment-form" (ngSubmit)="onEdit(appointmentForm)" #appointmentForm="ngForm">
+            <h1 class="title"> Edit appointment to <input class="text-center bg-transparent border-0" [value]="clinicService.clinic.clinicName"
+                                                          [ngModel] = "clinicService.clinic.clinicName" name="clinicName"></h1>
+
+            <div class="user-name-code">
+                <div>
+                    <input style="display: none" [value] = "appointmentService.appointment.id" [ngModel] = "appointmentService.appointment.id" name="id">
+                    <input style="display: none" [value] = "clinicService.clinic.id" [ngModel] = "clinicService.clinic.id" name="clinicId">
+                    <input style="display: none" [value] = "loginService.userLogged.id" [ngModel] = "loginService.userLogged.id" name="patientId">
+
+                    <div>
+                        <label for="p-firstName">First name: </label>
+                        <input id="p-firstName" [value]="loginService.userLogged.firstName" [ngModel]="loginService.userLogged.firstName" name="firstName">
+                    </div>
+                    <div>
+                        <label for="p-lastName">Last name: </label>
+                        <input id="p-lastName" [value]="loginService.userLogged.lastName" [ngModel]="loginService.userLogged.lastName" name="lastName">
+                    </div>
+                    <div>
+                        <label for="p-cnp">CNP: </label>
+                        <input id="p-cnp" [value]="loginService.userLogged.cnp" [ngModel]="loginService.userLogged.cnp" name="cnp">
+                    </div>
+                    <div>
+                        <label for="p-birthday">Date of birth: </label>
+                        <input id="p-birthday" [value]="loginService.userLogged.birthday" [ngModel]="loginService.userLogged.birthday" name="birthday">
+                    </div>
+                    <div>
+                        <label for="p-gender">Gender: </label>
+                        <input id="p-gender" [value]="loginService.userLogged.gender" [ngModel]="loginService.userLogged.gender" name="gender">
+                    </div>
+                    <div>
+                        <label for="p-phone">Phone: </label>
+                        <input id="p-phone" [value]="loginService.userLogged.phone" [ngModel]="loginService.userLogged.phone" name="phone">
+                    </div>
+                    <div>
+                        <label for="p-email">Email: </label>
+                        <input id="p-email" [value]="loginService.userLogged.email" [ngModel]="loginService.userLogged.email" name="email">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr">
+                    <label for="p-specialty">Specialty: </label>
+                    <select [(ngModel)] = "selectedSpecialty"  id="p-specialty" name="specialty">
+                        <option [value]="appointmentService.appointment.specialty" selected>{{appointmentService.appointment.specialty}}</option>
+                        <ng-container *ngFor="let specialty of clinicService.clinic.specialities">
+                            <option *ngIf="specialty.name !== appointmentService.appointment.specialty" name="specialty" [value]="specialty.name">{{specialty.name}}</option>
+                        </ng-container>
+                    </select>
+
+                    <label for="p-date">Date of appointment: </label>
+                    <input id="p-date" type="date" [value]="appointmentService.appointment.date" [ngModel]="appointmentService.appointment.date" name="date">
+
+                    <label for="p-time">Time of appointment: </label>
+                    <input id="p-time" type="time" [value]="appointmentService.appointment.time" [ngModel]="appointmentService.appointment.time" name="time">
+                </div>
+
+            </div>
+
+            <input class="submit" type="submit" value="Edit">
+
+            <div *ngIf="appointmentForm.submitted" style="font-size: 2rem; margin: 2rem; position: center">Form submitted!</div>
+        </form>
+    </div>
+</ng-container>
