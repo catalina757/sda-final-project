@@ -13,8 +13,10 @@ export class AppointmentService {
   public appointmentUrl = 'http://localhost:3000/appointments';
 
   public allAppointments: AppointmentModel[] = [];
-
   public appointment!: AppointmentModel;
+
+  public isSubmitAppointment: boolean = false;
+  public isEditAppointment: boolean = false;
 
   constructor(private http: HttpClient,
               private router: Router,
@@ -40,11 +42,23 @@ export class AppointmentService {
       return this.http.delete<AppointmentModel>(`${this.appointmentUrl}/${appointment.id}`);
   }
 
-  public openBookAppointmentServ(clinicSelected: ClinicModel) {
-    this.router.navigate(['book-appointment']).then(() => {
+  isSubmit(clinicSelected: ClinicModel) {
+    this.isEditAppointment = false;
+    this.isSubmitAppointment = true;
+
+    this.router.navigate(['appointments/book-appointment']).then(() => {
           this.clinicService.clinic = clinicSelected;
           return this.clinicService.clinic;
     });
   }
 
+  isEdit(appointmentSelected: AppointmentModel) {
+    this.isSubmitAppointment = false;
+    this.isEditAppointment = true;
+
+    this.router.navigate(['appointments/book-appointment/', appointmentSelected.id]).then(() => {
+      this.appointment = appointmentSelected;
+      return this.appointment;
+    });
+  }
 }

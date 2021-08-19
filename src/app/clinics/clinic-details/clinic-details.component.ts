@@ -20,8 +20,6 @@ export class ClinicDetailsComponent implements OnInit {
 
     this.clinicService.getOneClinicServ(this.id).subscribe((clinic: ClinicModel) => {
       this.selectedClinic = clinic;
-      console.log(this.selectedClinic.clinicName);
-      console.log(this.selectedClinic.specialities);
     });
   }
 }

@@ -4,6 +4,8 @@ import {AppointmentModel} from '../../models/appointment.model';
 import {LoginService} from '../../services/login.service';
 import {ClinicService} from '../../services/clinic.service';
 import {SearchService} from '../../services/search.service';
+import {Router} from '@angular/router';
+import {ClinicModel} from '../../models/clinic.model';
 
 @Component({
   selector: 'app-appointment-list',
@@ -15,7 +17,8 @@ export class AppointmentListComponent implements OnInit {
   constructor(public appointmentService: AppointmentService,
               public loginService: LoginService,
               public clinicService: ClinicService,
-              public searchService: SearchService) { }
+              public searchService: SearchService,
+              public router: Router) { }
 
   ngOnInit(): void {
     this.loadAppointments("");
@@ -58,7 +61,11 @@ export class AppointmentListComponent implements OnInit {
     if (search === "") {
       this.appointmentService.getAppointmentsServ().subscribe((allAppointments: AppointmentModel[]) => {
         this.appointmentService.allAppointments = allAppointments;
-      })
+
+        this.appointmentService.allAppointments
+            .sort((a: AppointmentModel, b: AppointmentModel) =>
+                a.date!.localeCompare(b.date!));
+      });
     } else if (search != "") {
       this.filterAppointments(search);
     }
@@ -71,4 +78,14 @@ export class AppointmentListComponent implements OnInit {
     return this.appointmentService.allAppointments;
   }
 
+  editAppointment(appointment: AppointmentModel) {
+    this.appointmentService.isEdit(appointment);
+
+    this.clinicService.getOneClinicServ(appointment.clinicId).subscribe((clinic: ClinicModel) => {
+      this.clinicService.clinic = clinic;
+      console.log(this.clinicService.clinic.clinicName);
+    });
+
+    this.appointmentService.appointment = appointment;
+  }
 }

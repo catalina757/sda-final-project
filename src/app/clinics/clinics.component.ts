@@ -12,8 +12,8 @@ export class ClinicsComponent implements OnInit {
   constructor(public clinicService: ClinicService) { }
 
   ngOnInit(): void {
-    this.clinicService.getClinicsServ().subscribe((allClinics: ClinicModel[]) => {
-      this.clinicService.allClinics = allClinics;
-    })
+    // this.clinicService.getClinicsServ().subscribe((allClinics: ClinicModel[]) => {
+    //   this.clinicService.allClinics = allClinics;
+    // })
   }
 }

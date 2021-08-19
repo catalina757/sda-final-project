@@ -18,15 +18,15 @@ export class AppointmentBookComponent implements OnInit {
               public appointmentService: AppointmentService,
               private router: Router) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   get allAppointments(): AppointmentModel[] {
     return this.appointmentService.allAppointments;
   }
 
   onSubmit(form: NgForm) {
+    this.appointmentService.isSubmit(this.clinicService.clinic);
+
     this.appointmentService.createAppointmentServ(form.value)
         .subscribe((newAppointment: AppointmentModel) => {
       this.allAppointments.push(newAppointment);
@@ -34,4 +34,11 @@ export class AppointmentBookComponent implements OnInit {
 
     this.router.navigate(['appointments']);
   }
+
+  onEdit(form: NgForm) {
+    this.appointmentService.updateAppointmentServ(form.value).subscribe();
+
+    this.router.navigate(['appointments']);
+  }
+
 }

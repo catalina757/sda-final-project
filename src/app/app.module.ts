@@ -17,8 +17,10 @@ import { ModalComponent } from './specialities/modal/modal.component';
 import { TopNavComponent } from './navbar/top-nav/top-nav.component';
 import { AsideNavComponent } from './navbar/aside-nav/aside-nav.component';
 import { ClinicsComponent } from './clinics/clinics.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 import { AppointmentListComponent } from './appointment/appointment-list/appointment-list.component';
 import { AppointmentBookComponent } from './appointment/appointment-book/appointment-book.component';
+import { AppointmentBookDetailsComponent } from './appointment/appointment-book-details/appointment-book-details.component';
 import { PatientsComponent } from './patients/patients.component';
 import { ClinicDetailsComponent } from './clinics/clinic-details/clinic-details.component';
 import { ClinicsListComponent } from './clinics/clinics-list/clinics-list.component';
@@ -26,6 +28,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -42,13 +46,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     TopNavComponent,
     AsideNavComponent,
     ClinicsComponent,
+    AppointmentComponent,
     AppointmentListComponent,
     AppointmentBookComponent,
+    AppointmentBookDetailsComponent,
     PatientsComponent,
     ClinicDetailsComponent,
     ClinicsListComponent,
     FooterComponent,
-    SearchComponent,
+    SearchComponent
 
   ],
     imports: [

@@ -28,7 +28,7 @@
                         <td class="patient-td">{{ appointment.time }}</td>
                         <td class="patient-td">{{ appointment.specialty }}</td>
                         <td class="patient-td">
-                            <button class="btn btn-outline-info px-4 me-2">Edit</button>
+                            <button class="btn btn-outline-info px-4 me-2" (click)="editAppointment(appointment)">Edit</button>
                             <button class="btn btn-outline-warning ms-2" (click)="deleteAppointment(appointment)">Delete</button>
                         </td>
                     </tr>
@@ -47,7 +47,7 @@
                         <th>Appointment date</th>
                         <th>Appointment time</th>
                         <th>Specialty</th>
-                        <th>Actions</th>
+<!--                        <th>Actions</th>-->
                     </tr>
                 </thead>
                 <tbody *ngFor="let appointment of appointmentService.allAppointments">
@@ -57,11 +57,11 @@
                     <td class="clinic-td">{{ appointment.date }}</td>
                     <td class="clinic-td">{{ appointment.time }}</td>
                     <td class="clinic-td">{{ appointment.specialty }}</td>
-                    <td class="clinic-td">
-                        <button class="btn btn-outline-info px-4 me-2">Edit</button>
-                        <button class="btn btn-outline-warning ms-2"
-                                (click)="deleteAppointment(appointment)">Delete</button>
-                    </td>
+<!--                    <td class="clinic-td">-->
+<!--                        <button class="btn btn-outline-info px-4 me-2" (click)="editAppointment(appointment)">Edit</button>-->
+<!--                        <button class="btn btn-outline-warning ms-2"-->
+<!--                                (click)="deleteAppointment(appointment)">Delete</button>-->
+<!--                    </td>-->
                 </tr>
                 </tbody>
             </table>

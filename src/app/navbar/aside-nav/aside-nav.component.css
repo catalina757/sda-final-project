@@ -11,6 +11,10 @@
     top:100px;
 }
 
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 #sidebar ul li {
     padding:15px 10px;
     border-bottom:1px solid #444;

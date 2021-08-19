@@ -42,6 +42,10 @@ export class PatientsComponent implements OnInit {
     if (search === "") {
       this.patientService.getPatientsServ().subscribe((allPatients: PatientModel[]) => {
         this.patientService.allPatients = allPatients;
+
+        this.patientService.allPatients
+            .sort((a: PatientModel, b: PatientModel) =>
+                a.lastName!.localeCompare(b.lastName!));
       });
 
       this.appointmentService.getAppointmentsServ().subscribe((allAppointments: AppointmentModel[]) => {

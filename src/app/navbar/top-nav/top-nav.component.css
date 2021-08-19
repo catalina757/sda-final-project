@@ -3,3 +3,7 @@
     border-radius: 5px;
     width: fit-content;
 }
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}

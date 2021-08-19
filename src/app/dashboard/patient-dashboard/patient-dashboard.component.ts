@@ -57,7 +57,6 @@ export class PatientDashboardComponent implements OnInit {
         for (let i = 0; i <= this.myClinicsId.length; i++) {
           if (clinic.id === this.myClinicsId[i]) {
             this.clinicsOfPatientLogged.push(clinic);
-            console.log(this.clinicsOfPatientLogged);
           }
         }
       }

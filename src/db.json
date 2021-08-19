@@ -89,32 +89,32 @@
           "description": "Allergology"
         },
         {
-          "name": "Pneumology",
-          "description": "Pneumology"
-        },
-        {
           "name": "Cardiology",
           "description": "Cardiology"
-        },
-        {
-          "name": "Radiology",
-          "description": "Radiology"
         },
         {
           "name": "Dermatology",
           "description": "Dermatology"
         },
         {
-          "name": "Surgery",
-          "description": "Surgery"
+          "name": "Emergencies",
+          "description": "Emergencies"
         },
         {
           "name": "Pediatrics",
           "description": "Pediatrics"
         },
         {
-          "name": "Emergencies",
-          "description": "Emergencies"
+          "name": "Pneumology",
+          "description": "Pneumology"
+        },
+        {
+          "name": "Radiology",
+          "description": "Radiology"
+        },
+        {
+          "name": "Surgery",
+          "description": "Surgery"
         },
         {
           "name": "Orthopedic",
@@ -219,6 +219,14 @@
         {
           "name": "Dermatology",
           "description": "Dermatology"
+        },
+        {
+          "name": "Allergology",
+          "description": "Allergology"
+        },
+        {
+          "name": "Orthopedic",
+          "description": "orthopedic"
         }
       ]
     }
@@ -289,70 +297,6 @@
       "id": 22
     },
     {
-      "clinicName": "Medicover",
-      "clinicId": 4,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Allergology",
-      "date": "2021-08-08",
-      "time": "01:33",
-      "id": 24
-    },
-    {
-      "clinicName": "Medicover",
-      "clinicId": 4,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Allergology",
-      "date": "2021-08-08",
-      "time": "01:35",
-      "id": 25
-    },
-    {
-      "clinicName": "Angisan Clinic",
-      "clinicId": 1,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Pneumology",
-      "date": "2021-08-08",
-      "time": "03:13",
-      "id": 27
-    },
-    {
-      "clinicName": "Angisan Clinic",
-      "clinicId": 1,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Cardiology",
-      "date": "2021-08-04",
-      "time": "04:14",
-      "id": 28
-    },
-    {
       "clinicName": "Angisan Clinic",
       "clinicId": 1,
       "patientId": 3,
@@ -417,7 +361,24 @@
       "id": 32
     },
     {
+      "clinicName": "Medicover",
+      "id": 38,
+      "clinicId": 4,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Surgery",
+      "date": "2021-08-02",
+      "time": "11:37"
+    },
+    {
       "clinicName": "Regina Maria",
+      "id": 39,
       "clinicId": 3,
       "patientId": 1,
       "firstName": "Catalina",
@@ -427,10 +388,9 @@
       "gender": "female",
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
-      "specialty": "Allergologyyyyy",
-      "date": "2021-08-07",
-      "time": "21:45",
-      "id": 33
+      "specialty": "Orthopedic",
+      "date": "2021-08-19",
+      "time": "11:49"
     }
   ]
 }

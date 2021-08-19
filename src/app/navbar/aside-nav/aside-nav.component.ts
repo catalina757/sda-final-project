@@ -35,5 +35,4 @@ export class AsideNavComponent implements OnInit {
       sidebar!.classList.remove('hidden-aside-nav');
     }
   }
-
 }

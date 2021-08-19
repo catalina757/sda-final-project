@@ -1,7 +1,7 @@
 <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light"
-     [ngClass]="{'my-aside-margin' : loginService.userLogged}" id="my-top-nav" style="height: 76px">
+     [ngClass]="{'my-aside-margin' : loginService.userLogged}" id="my-top-nav">
     <div class="container-fluid">
-        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerTop"
+        <button class="navbar-toggler ms-3 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerTop"
                 aria-controls="navbarTogglerTop" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,22 +27,22 @@
             </ng-container>
 
             <ng-template #isLogged>
-                <ul class="navbar-nav mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'clinic'">
+                <ul class="navbar-nav ms-auto px-3 mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'clinic'">
                     <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         {{loginService.userLogged.clinicName}}
                     </li>
                 </ul>
 
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center" *ngIf="loginService.userLogged.userType === 'patient'">
+                <ul class="navbar-nav ms-auto px-3 mb-2 mb-lg-0" *ngIf="loginService.userLogged.userType === 'patient'">
                     <li class="nav-item mx-2" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <img class="rounded-circle bg-secondary" src="./assets/images/user-female-avatar-woman.png" alt="image" style="height: 2rem; width: 2rem">
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="padding-top: 5px">
                         {{loginService.userLogged.firstName}} {{loginService.userLogged.lastName}}
                     </li>
                 </ul>
 
-                <button class="btn btn-outline-danger mx-5" type="button" (click)="loginService.logout()">Logout</button>
+                <button class="btn btn-outline-danger mx-3" type="button" (click)="loginService.logout()">Logout</button>
             </ng-template>
         </div>
 

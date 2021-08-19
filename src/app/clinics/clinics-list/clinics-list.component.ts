@@ -19,7 +19,6 @@ export class ClinicsListComponent implements OnInit {
     this.loadClinics("");
   }
 
-  //filtrare input litere mari/mici in nume clinica
   public searchClinicByInput(input: string) {
     this.searchService.currentSearchTerm = input;
 
@@ -28,7 +27,6 @@ export class ClinicsListComponent implements OnInit {
         : this.clinicService.allClinics;
   }
 
-  // lista filtrata dupa nume
   public filterClinics(input: string) {
     this.clinicService.allClinics = this.searchClinicByInput(input);
   }
@@ -39,10 +37,12 @@ export class ClinicsListComponent implements OnInit {
     if (search === "") {
       this.clinicService.getClinicsServ().subscribe((allClinics: ClinicModel[]) => {
         this.clinicService.allClinics = allClinics;
+
+        this.clinicService.allClinics
+            .sort((a: ClinicModel, b: ClinicModel) =>
+                a.clinicName!.localeCompare(b.clinicName!));
       })
     } else if (search != "") {
-      console.log(search);
-      //apelez functia de filtrare aici
       this.filterClinics(search);
     }
   }
