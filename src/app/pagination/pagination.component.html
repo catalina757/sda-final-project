@@ -1,34 +1,31 @@
-<div class="pagination__container">
-    <div class="pagination__button pagination__page-first"
-         [ngClass]="{'pagination__button disabled': currentPage === 1}"
+<div class="d-flex align-items-center justify-content-center my-2">
+    <div class="pag-button"
+         [ngClass]="{'disabled': currentPage === 1}"
          (click)="onFirstPage()">
         First
     </div>
 
-    <div class="pagination__button pagination__page-previous"
-         [ngClass]="{'pagination__button disabled': currentPage === 1}"
+    <div class="pag-button"
+         [ngClass]="{'disabled': currentPage === 1}"
          (click)="onPreviousPage()">
         Previous
     </div>
 
-    <div class="pagination__page-active">
-        <input class="pagination__current-page" [(ngModel)]="currentPage" (ngModelChange)="onSetPage($event)">
-        /
+    <div class="d-flex align-items-center text-center mx-2" style="min-width: 50px">
+        <input class="current-page text-center" [(ngModel)]="currentPage" (ngModelChange)="onSetPage($event)">
+        <span class="mx-1"> / </span>
         <span>{{allPagesNumber}}</span>
     </div>
 
-    <div class="pagination__button pagination__page-next"
-         [ngClass]="{'pagination__button disabled': currentPage === allPagesNumber}"
+    <div class="pag-button"
+         [ngClass]="{'disabled': currentPage === allPagesNumber}"
          (click)="onNextPage()">
         Next
     </div>
 
-    <div class="pagination__button pagination__page-last"
-         [ngClass]="{'pagination__button disabled': currentPage === allPagesNumber}"
+    <div class="pag-button"
+         [ngClass]="{'disabled': currentPage === allPagesNumber}"
          (click)="onLastPage()">
         Last
     </div>
 </div>
-
-
-<!--(input)="onSetPage($event)" [value]="currentPage"-->

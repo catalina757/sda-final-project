@@ -22,9 +22,9 @@ export class ClinicDashboardComponent implements OnInit {
   public legendPosition = LegendPosition.Below;
   public chart: Chart[] = [];
   public chartData = [
-    { name: "Patients", value: 1 },
-    { name: "Appointments", value: 2 },
-    { name: "Specialities", value: 3 }
+    { name: "Patients", value: 0 },
+    { name: "Appointments", value: 0 },
+    { name: "Specialities", value: 0 }
   ];
 
   constructor(public clinicService: ClinicService,
@@ -69,8 +69,10 @@ export class ClinicDashboardComponent implements OnInit {
       this.clinicService.clinic = clinic;
       this.clinicService.clinic.specialities = clinic.specialities;
 
-      this.chartData[2].value = this.clinicService.clinic.specialities!.length;
-       this.chart = [...this.chartData];
+      if (this.clinicService.hasSpecialitiesServ(this.clinicService.clinic)) {
+        this.chartData[2].value = this.clinicService.clinic.specialities!.length;
+        this.chart = [...this.chartData];
+      }
     });
   }
 }

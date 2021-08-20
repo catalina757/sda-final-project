@@ -229,6 +229,20 @@
           "description": "orthopedic"
         }
       ]
+    },
+    {
+      "userType": "clinic",
+      "streetAddress": "Potcoavelor",
+      "numberAddress": "34",
+      "city": "Bucuresti",
+      "postalCode": 7000,
+      "phone": "077512345",
+      "email": "unirea@email.ro",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "clinicName": "Centrul Medical Unirea",
+      "codeAuthorization": 591932,
+      "id": 6
     }
   ],
   "appointments": [
@@ -373,7 +387,7 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Allergology",
-      "date": "2021-02-04",
+      "date": "2021-03-25",
       "time": "11:37"
     },
     {
@@ -389,7 +403,7 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Orthopedic",
-      "date": "2021-08-19",
+      "date": "2021-01-01",
       "time": "11:49"
     },
     {
@@ -410,6 +424,7 @@
     },
     {
       "clinicName": "Angisan Clinic",
+      "id": 41,
       "clinicId": 1,
       "patientId": 1,
       "firstName": "Catalina",
@@ -420,9 +435,8 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Pediatrics",
-      "date": "2021-08-14",
-      "time": "21:29",
-      "id": 41
+      "date": "2021-03-01",
+      "time": "21:29"
     },
     {
       "clinicName": "Medsana",

@@ -166,7 +166,7 @@
 
         <div class="credentials">
             <label class="ps-2" for="phone">Phone: </label>
-            <input id="phone" type="number" name="phone" placeholder="Phone" ngModel required pattern="[07]\d{8}" #phone="ngModel">
+            <input id="phone" type="text" name="phone" placeholder="Phone" ngModel required pattern="[07]\d{8}" #phone="ngModel">
             <div *ngIf="!phone.valid && phone.touched">
                 <div *ngIf="phone.errors?.required">
                     Phone is required.

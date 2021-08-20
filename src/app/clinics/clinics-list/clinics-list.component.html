@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let clinic of clinicService.allClinics" class="text-center">
+            <tr *ngFor="let clinic of pagedClinics" class="text-center">
                 <td><a class="text-decoration-none" routerLink="/clinics/{{clinic.id}}">{{ clinic.clinicName }}</a></td>
                 <td>{{ clinic.phone }}</td>
                 <td>{{ clinic.email }}</td>
@@ -26,3 +26,5 @@
         </tbody>
     </table>
 </div>
+
+<app-pagination [receivedCurrentPage]="receivedCurrentPage" [allPagesNumber]="allPages" (changePage)="onPageChange($event)"></app-pagination>

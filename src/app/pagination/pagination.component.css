@@ -1,0 +1,27 @@
+.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 50%;
+}
+
+.pag-button {
+    cursor: pointer;
+    background-color: #EBF9F1;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+    padding: 6px 0 6px 0;
+    width: 80px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.pag-button:hover {
+    background-color: rgba(2,142,207,0.5);
+}
+
+.current-page {
+    display: block;
+    width: 30px;
+    margin-right: 5px;
+}

@@ -16,7 +16,7 @@ export class AppointmentListComponent implements OnInit {
   public allMyAppointments: AppointmentModel[] = [];
   pagedAppointments: AppointmentModel[] = [];
   allPages: number = 0;
-  itemsPerPage: number = 3;
+  itemsPerPage: number = 5;
   receivedCurrentPage: number = 0;
 
   constructor(public appointmentService: AppointmentService,
@@ -79,7 +79,6 @@ export class AppointmentListComponent implements OnInit {
         this.appointmentService.allAppointments = allAppointments;
         this.getMyAppointments();
         this.sortMyAppointments(this.allMyAppointments);
-
 
         this.onPageChange();
         this.allPages = Math.ceil(this.allMyAppointments.length / this.itemsPerPage);
