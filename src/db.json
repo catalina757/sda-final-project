@@ -403,7 +403,7 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Orthopedic",
-      "date": "2021-01-01",
+      "date": "2021-04-16",
       "time": "11:49"
     },
     {
@@ -517,6 +517,70 @@
       "specialty": "Surgery",
       "date": "2021-08-05",
       "time": "16:07"
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 3,
+      "firstName": "Ioana",
+      "lastName": "Popescu",
+      "cnp": 2810304123456,
+      "birthday": "2000-07-09",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "ioana@ymail.com",
+      "specialty": "Dermatology",
+      "date": "2021-08-22",
+      "time": "18:45",
+      "id": 47
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 3,
+      "firstName": "Ioana",
+      "lastName": "Popescu",
+      "cnp": 2810304123456,
+      "birthday": "2000-07-09",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "ioana@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-07-26",
+      "time": "18:45",
+      "id": 48
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 2,
+      "firstName": "Camelia",
+      "lastName": "Dragomir",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "camelia@yaho.com",
+      "specialty": "Pediatrics",
+      "date": "2021-08-07",
+      "time": "18:45",
+      "id": 49
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "clinicId": 1,
+      "patientId": 2,
+      "firstName": "Camelia",
+      "lastName": "Dragomir",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "camelia@yaho.com",
+      "specialty": "Radiology",
+      "date": "2021-08-05",
+      "time": "18:45",
+      "id": 50
     }
   ]
 }

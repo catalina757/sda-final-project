@@ -50,7 +50,7 @@
 <!--                        <th>Actions</th>-->
                     </tr>
                 </thead>
-                <tbody *ngFor="let appointment of appointmentService.allAppointments">
+                <tbody *ngFor="let appointment of pagedAppointmentsC">
                 <tr  *ngIf="appointment.clinicId === loginService.userLogged.id" class="text-center">
                     <td class="clinic-td">{{ appointment.firstName }} {{ appointment.lastName }}</td>
                     <td class="clinic-td">{{ appointment.cnp }}</td>
