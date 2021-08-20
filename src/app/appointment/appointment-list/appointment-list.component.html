@@ -6,7 +6,7 @@
     </div>
 
 
-    <app-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)"></app-pagination>
+    <app-pagination [receivedCurrentPage]="receivedCurrentPage" [allPagesNumber]="allPages" (changePage)="onPageChange($event)"></app-pagination>
 
 
     <ng-container *ngIf="loginService.userLogged.userType === 'patient'">

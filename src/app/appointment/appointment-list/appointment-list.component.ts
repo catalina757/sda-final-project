@@ -17,6 +17,7 @@ export class AppointmentListComponent implements OnInit {
   pagedAppointments: AppointmentModel[] = [];
   allPages: number = 0;
   itemsPerPage: number = 3;
+  receivedCurrentPage: number = 0;
 
   constructor(public appointmentService: AppointmentService,
               public loginService: LoginService,
@@ -55,6 +56,10 @@ export class AppointmentListComponent implements OnInit {
   public filterAppointments(input: string) {
     if (this.loginService.userLogged.userType === "patient") {
       this.allMyAppointments = this.searchAppointmentOfPatient(input);
+
+      this.onPageChange();
+      this.allPages = Math.ceil(this.allMyAppointments.length / this.itemsPerPage);
+      this.receivedCurrentPage = 1;
     }
 
     if (this.loginService.userLogged.userType === "clinic") {
@@ -76,14 +81,14 @@ export class AppointmentListComponent implements OnInit {
 
         this.onPageChange();
         this.allPages = Math.ceil(this.allMyAppointments.length / this.itemsPerPage);
-        console.log("all pages: ", this.allPages);
 
-        this.appointmentService.allAppointments
+        this.allMyAppointments
             .sort((a: AppointmentModel, b: AppointmentModel) =>
                 a.date!.localeCompare(b.date!));
       });
-    } else if (search != "") {
+    } else {
       this.filterAppointments(search);
+      this.onPageChange();
     }
   }
 

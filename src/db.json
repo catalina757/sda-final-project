@@ -471,6 +471,38 @@
       "specialty": "Cardiology",
       "date": "2021-08-14",
       "time": "09:25"
+    },
+    {
+      "clinicName": "Medsana",
+      "clinicId": 5,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Allergology",
+      "date": "2021-03-06",
+      "time": "16:06",
+      "id": 45
+    },
+    {
+      "clinicName": "Medicover",
+      "clinicId": 4,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Surgery",
+      "date": "2021-12-20",
+      "time": "16:07",
+      "id": 46
     }
   ]
 }
