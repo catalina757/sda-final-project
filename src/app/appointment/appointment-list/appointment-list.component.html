@@ -5,6 +5,10 @@
         <app-search (newSearchEvent)="filterAppointments($event)"></app-search>
     </div>
 
+
+    <app-pagination [allPagesNumber]="allPages" (changePage)="onPageChange($event)"></app-pagination>
+
+
     <ng-container *ngIf="loginService.userLogged.userType === 'patient'">
         <div>
             <a class="text-decoration-none d-inline-block mb-5 w-100 text-end" routerLink="/clinics"> + Add appointment </a>
@@ -21,7 +25,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let appointment of appointmentService.allAppointments">
+                <tbody *ngFor="let appointment of pagedAppointments">
                     <tr  *ngIf="appointment.patientId === loginService.userLogged.id" class="text-center">
                         <td class="patient-td">{{ appointment.clinicName }}</td>
                         <td class="patient-td">{{ appointment.date }}</td>

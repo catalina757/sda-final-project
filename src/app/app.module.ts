@@ -28,6 +28,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PaginationComponent } from './pagination/pagination.component';
+
 
 
 
@@ -54,7 +56,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ClinicDetailsComponent,
     ClinicsListComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    PaginationComponent
 
   ],
     imports: [

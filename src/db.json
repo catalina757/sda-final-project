@@ -455,6 +455,22 @@
       "date": "2021-08-14",
       "time": "21:36",
       "id": 43
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "id": 44,
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-08-14",
+      "time": "09:25"
     }
   ]
 }
