@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ClinicModel} from '../models/clinic.model';
-import {PatientModel} from '../models/patient.model';
+import {environment} from '../../environments/environment';
 
 
 @Injectable({
@@ -10,6 +10,7 @@ import {PatientModel} from '../models/patient.model';
 })
 export class ClinicService {
   private clinicUrl = 'http://localhost:3000/clinics';
+  private clinicimageUrl = `https://api.unsplash.com/photos/random?client_id=${environment.client_id}&query=`
 
   public allClinics: ClinicModel[] = [];
 

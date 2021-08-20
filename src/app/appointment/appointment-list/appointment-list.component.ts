@@ -129,10 +129,10 @@ export class AppointmentListComponent implements OnInit {
   }
 
   deleteAppointment(appointment: AppointmentModel) {
-    this.appointmentService.deleteAppointmentServ(appointment).subscribe(
-        () => (this.appointmentService.allAppointments = this.appointmentService.allAppointments
-            .filter((a) => a.id !== appointment.id)))
-    return this.appointmentService.allAppointments;
+    this.appointmentService.deleteAppointmentServ(appointment).subscribe(() => {
+          this.allMyAppointments = this.allMyAppointments.filter((a: AppointmentModel) => a.id !== appointment.id);
+          this.loadAppointments("");
+    })
   }
 
   editAppointment(appointment: AppointmentModel) {
@@ -141,9 +141,5 @@ export class AppointmentListComponent implements OnInit {
     this.clinicService.getOneClinicServ(appointment.clinicId).subscribe((clinic: ClinicModel) => {
       this.clinicService.clinic = clinic;
     });
-
-    for (let myAppointment of this.allMyAppointments) {
-      myAppointment = appointment;
-    }
   }
 }

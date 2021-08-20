@@ -67,6 +67,23 @@
       "birthday": "2021-08-07",
       "gender": "male",
       "id": 4
+    },
+    {
+      "userType": "patient",
+      "streetAddress": "Orhideelor",
+      "numberAddress": "110",
+      "city": "Targoviste",
+      "postalCode": 284765,
+      "phone": "079812378",
+      "email": "cristian@email.ro",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "Cristian",
+      "lastName": "Manole",
+      "cnp": 1900607123456,
+      "birthday": "1990-06-07",
+      "gender": "male",
+      "id": 5
     }
   ],
   "clinics": [
@@ -89,16 +106,16 @@
           "description": "Allergology"
         },
         {
-          "name": "Cardiology",
-          "description": "Cardiology"
-        },
-        {
           "name": "Dermatology",
           "description": "Dermatology"
         },
         {
           "name": "Emergencies",
           "description": "Emergencies"
+        },
+        {
+          "name": "Epidemiology",
+          "description": "Epidemiology"
         },
         {
           "name": "Pediatrics",
@@ -111,14 +128,6 @@
         {
           "name": "Radiology",
           "description": "Radiology"
-        },
-        {
-          "name": "Surgery",
-          "description": "Surgery"
-        },
-        {
-          "name": "Orthopedic",
-          "description": "orthopedic"
         }
       ]
     },
@@ -242,7 +251,37 @@
       "confirmPassword": "123456",
       "clinicName": "Centrul Medical Unirea",
       "codeAuthorization": 591932,
-      "id": 6
+      "id": 6,
+      "specialities": [
+        {
+          "name": "Allergology",
+          "description": "Allergology"
+        },
+        {
+          "name": "Cardiology",
+          "description": "Cardiology"
+        },
+        {
+          "name": "Dermatology",
+          "description": "Dermatology"
+        },
+        {
+          "name": "Emergencies",
+          "description": "Emergencies"
+        },
+        {
+          "name": "Epidemiology",
+          "description": "Epidemiology"
+        },
+        {
+          "name": "Pediatrics",
+          "description": "Pediatrics"
+        },
+        {
+          "name": "Pneumology",
+          "description": "Pneumology"
+        }
+      ]
     }
   ],
   "appointments": [
@@ -277,22 +316,6 @@
       "date": "2021-07-03",
       "time": "10:57",
       "id": 13
-    },
-    {
-      "clinicName": "Sanador",
-      "clinicId": 2,
-      "patientId": 3,
-      "firstName": "Ioana",
-      "lastName": "Popescu",
-      "cnp": 2810304123456,
-      "birthday": "2000-07-09",
-      "gender": "female",
-      "phone": 725678901,
-      "email": "ioana@ymail.com",
-      "specialty": "Surgery",
-      "date": "2021-08-06",
-      "time": "15:10",
-      "id": 21
     },
     {
       "clinicName": "Sanador",
@@ -345,22 +368,6 @@
     {
       "clinicName": "Angisan Clinic",
       "clinicId": 1,
-      "patientId": 3,
-      "firstName": "Ioana",
-      "lastName": "Popescu",
-      "cnp": 2810304123456,
-      "birthday": "2000-07-09",
-      "gender": "female",
-      "phone": 725678901,
-      "email": "ioana@ymail.com",
-      "specialty": "Radiology",
-      "date": "2021-08-05",
-      "time": "08:15",
-      "id": 31
-    },
-    {
-      "clinicName": "Angisan Clinic",
-      "clinicId": 1,
       "patientId": 2,
       "firstName": "Camelia",
       "lastName": "Dragomir",
@@ -373,166 +380,6 @@
       "date": "2021-08-07",
       "time": "14:43",
       "id": 32
-    },
-    {
-      "clinicName": "Medicover",
-      "id": 38,
-      "clinicId": 4,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Allergology",
-      "date": "2021-03-25",
-      "time": "11:37"
-    },
-    {
-      "clinicName": "Regina Maria",
-      "id": 39,
-      "clinicId": 3,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Orthopedic",
-      "date": "2021-04-16",
-      "time": "11:49"
-    },
-    {
-      "clinicName": "Medicover",
-      "id": 40,
-      "clinicId": 4,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Surgery",
-      "date": "2021-08-06",
-      "time": "20:22"
-    },
-    {
-      "clinicName": "Angisan Clinic",
-      "id": 41,
-      "clinicId": 1,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Pediatrics",
-      "date": "2021-03-01",
-      "time": "21:29"
-    },
-    {
-      "clinicName": "Medsana",
-      "id": 42,
-      "clinicId": 5,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Dermatology",
-      "date": "2021-05-01",
-      "time": "21:35"
-    },
-    {
-      "clinicName": "Angisan Clinic",
-      "clinicId": 1,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Cardiology",
-      "date": "2021-08-14",
-      "time": "21:36",
-      "id": 43
-    },
-    {
-      "clinicName": "Angisan Clinic",
-      "id": 44,
-      "clinicId": 1,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Cardiology",
-      "date": "2021-08-14",
-      "time": "09:25"
-    },
-    {
-      "clinicName": "Medsana",
-      "clinicId": 5,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Allergology",
-      "date": "2021-03-06",
-      "time": "16:06",
-      "id": 45
-    },
-    {
-      "clinicName": "Medicover",
-      "id": 46,
-      "clinicId": 4,
-      "patientId": 1,
-      "firstName": "Catalina",
-      "lastName": "Condrea",
-      "cnp": 2810304123456,
-      "birthday": "1981-04-03",
-      "gender": "female",
-      "phone": 726123456,
-      "email": "catalina.condrea@ymail.com",
-      "specialty": "Surgery",
-      "date": "2021-08-05",
-      "time": "16:07"
-    },
-    {
-      "clinicName": "Angisan Clinic",
-      "clinicId": 1,
-      "patientId": 3,
-      "firstName": "Ioana",
-      "lastName": "Popescu",
-      "cnp": 2810304123456,
-      "birthday": "2000-07-09",
-      "gender": "female",
-      "phone": 725678901,
-      "email": "ioana@ymail.com",
-      "specialty": "Dermatology",
-      "date": "2021-08-22",
-      "time": "18:45",
-      "id": 47
     },
     {
       "clinicName": "Angisan Clinic",
@@ -581,6 +428,166 @@
       "date": "2021-08-05",
       "time": "18:45",
       "id": 50
+    },
+    {
+      "clinicName": "Sanador",
+      "id": 51,
+      "clinicId": 2,
+      "patientId": 5,
+      "firstName": "Cristian",
+      "lastName": "Manole",
+      "cnp": 1900607123456,
+      "birthday": "1990-06-07",
+      "gender": "male",
+      "phone": "079812378",
+      "email": "cristian@email.ro",
+      "specialty": "Cardiology",
+      "date": "2021-08-07",
+      "time": "19:40"
+    },
+    {
+      "clinicName": "Angisan Clinic",
+      "id": 52,
+      "clinicId": 1,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Pediatrics",
+      "date": "2021-08-01",
+      "time": "22:44"
+    },
+    {
+      "clinicName": "Sanador",
+      "clinicId": 2,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-07-26",
+      "time": "23:17",
+      "id": 61
+    },
+    {
+      "clinicName": "Centrul Medical Unirea",
+      "id": 62,
+      "clinicId": 6,
+      "patientId": 3,
+      "firstName": "Ioana",
+      "lastName": "Popescu",
+      "cnp": 2810304123456,
+      "birthday": "2000-07-09",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "ioana@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-08-08",
+      "time": "23:21"
+    },
+    {
+      "clinicName": "Centrul Medical Unirea",
+      "id": 64,
+      "clinicId": 6,
+      "patientId": 3,
+      "firstName": "Ioana",
+      "lastName": "Popescu",
+      "cnp": 2810304123456,
+      "birthday": "2000-07-09",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "ioana@ymail.com",
+      "specialty": "Emergencies",
+      "date": "2021-04-30",
+      "time": "00:21"
+    },
+    {
+      "clinicName": "Sanador",
+      "id": 65,
+      "clinicId": 2,
+      "patientId": 3,
+      "firstName": "Ioana",
+      "lastName": "Popescu",
+      "cnp": 2810304123456,
+      "birthday": "2000-07-09",
+      "gender": "female",
+      "phone": 725678901,
+      "email": "ioana@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-08-01",
+      "time": "23:22"
+    },
+    {
+      "clinicName": "Sanador",
+      "clinicId": 2,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Cardiology",
+      "date": "2021-08-06",
+      "time": "23:49",
+      "id": 66
+    },
+    {
+      "clinicName": "Medsana",
+      "clinicId": 5,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Allergology",
+      "date": "2021-08-16",
+      "time": "00:48",
+      "id": 67
+    },
+    {
+      "clinicName": "Regina Maria",
+      "clinicId": 3,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Allergology",
+      "date": "2021-09-11",
+      "time": "10:49",
+      "id": 69
+    },
+    {
+      "clinicName": "Centrul Medical Unirea",
+      "clinicId": 6,
+      "patientId": 1,
+      "firstName": "Catalina",
+      "lastName": "Condrea",
+      "cnp": 2810304123456,
+      "birthday": "1981-04-03",
+      "gender": "female",
+      "phone": 726123456,
+      "email": "catalina.condrea@ymail.com",
+      "specialty": "Emergencies",
+      "date": "2021-08-31",
+      "time": "18:49",
+      "id": 70
     }
   ]
 }

@@ -30,10 +30,6 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PaginationComponent } from './pagination/pagination.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

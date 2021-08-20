@@ -14,8 +14,6 @@ export class ModalComponent implements OnInit {
   @Input() modalOpenMessage: boolean = false;
   @Input() public specialtyIndex: number = 0;
 
-
-
   constructor(private loginService: LoginService,
               public clinicService: ClinicService,
               public modalService: ModalService) { }
@@ -23,8 +21,9 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {}
 
   onCreate(form: NgForm) {
-    this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe((clinic:ClinicModel) => {
-      this.clinicService.clinic = clinic;
+    this.clinicService.getOneClinicServ(this.loginService.userLogged.id!).subscribe(
+        (clinic:ClinicModel) => {
+          this.clinicService.clinic = clinic;
 
       if(!this.clinicService.hasSpecialitiesServ(clinic)) {
         clinic.specialities = [];
@@ -45,7 +44,12 @@ export class ModalComponent implements OnInit {
           alert("specialty exist!!!");
         } else {
           clinic.specialities!.push(form.value);
-          this.clinicService.updateClinicServ(clinic).subscribe();
+          this.clinicService.updateClinicServ(clinic).subscribe(
+              () => {
+                this.clinicService.clinic.specialities!
+                .sort((a, b) =>
+                    a.name!.localeCompare(b.name!));
+          });
           this.modalService.closeModal();
         }
       }
@@ -58,8 +62,11 @@ export class ModalComponent implements OnInit {
     this.clinicService.clinic.specialities![this.modalService.specialtyIndex!].name = this.modalService.specialty.name;
     this.clinicService.clinic.specialities![this.modalService.specialtyIndex!].description = this.modalService.specialty.description;
 
-    this.clinicService.updateClinicServ(this.clinicService.clinic).subscribe();
-
+    this.clinicService.updateClinicServ(this.clinicService.clinic).subscribe(() => {
+      this.clinicService.clinic.specialities!
+          .sort((a, b) =>
+              a.name!.localeCompare(b.name!));
+    });
     this.modalService.closeModal();
   }
 }
