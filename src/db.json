@@ -372,8 +372,8 @@
       "gender": "female",
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
-      "specialty": "Surgery",
-      "date": "2021-06-01",
+      "specialty": "Allergology",
+      "date": "2021-02-04",
       "time": "11:37"
     },
     {
@@ -405,7 +405,7 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Surgery",
-      "date": "2021-08-13",
+      "date": "2021-08-06",
       "time": "20:22"
     },
     {
@@ -426,6 +426,7 @@
     },
     {
       "clinicName": "Medsana",
+      "id": 42,
       "clinicId": 5,
       "patientId": 1,
       "firstName": "Catalina",
@@ -436,9 +437,8 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Dermatology",
-      "date": "2021-08-08",
-      "time": "21:35",
-      "id": 42
+      "date": "2021-05-01",
+      "time": "21:35"
     },
     {
       "clinicName": "Angisan Clinic",
@@ -490,6 +490,7 @@
     },
     {
       "clinicName": "Medicover",
+      "id": 46,
       "clinicId": 4,
       "patientId": 1,
       "firstName": "Catalina",
@@ -500,9 +501,8 @@
       "phone": 726123456,
       "email": "catalina.condrea@ymail.com",
       "specialty": "Surgery",
-      "date": "2021-12-20",
-      "time": "16:07",
-      "id": 46
+      "date": "2021-08-05",
+      "time": "16:07"
     }
   ]
 }

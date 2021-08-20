@@ -78,18 +78,22 @@ export class AppointmentListComponent implements OnInit {
       this.appointmentService.getAppointmentsServ().subscribe((allAppointments: AppointmentModel[]) => {
         this.appointmentService.allAppointments = allAppointments;
         this.getMyAppointments();
+        this.sortMyAppointments(this.allMyAppointments);
+
 
         this.onPageChange();
         this.allPages = Math.ceil(this.allMyAppointments.length / this.itemsPerPage);
-
-        this.allMyAppointments
-            .sort((a: AppointmentModel, b: AppointmentModel) =>
-                a.date!.localeCompare(b.date!));
       });
     } else {
       this.filterAppointments(search);
       this.onPageChange();
     }
+  }
+
+  sortMyAppointments(appointments: AppointmentModel[]) {
+    appointments
+        .sort((a: AppointmentModel, b: AppointmentModel) =>
+            a.date!.localeCompare(b.date!));
   }
 
   onPageChange(page: number = 1): void {
@@ -112,6 +116,10 @@ export class AppointmentListComponent implements OnInit {
       this.clinicService.clinic = clinic;
     });
 
-    this.appointmentService.appointment = appointment;
+    for (let myAppointment of this.allMyAppointments) {
+      myAppointment = appointment;
+    }
+
+    console.log(this.allMyAppointments);
   }
 }
